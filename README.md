@@ -6,22 +6,22 @@ User will be able to build a resume using a template and receive and email with 
 ## Technologies
 
 ### Back-end Technology
-  - Ruby on Rails with at least five additional gems: 
+  - Ruby on Rails with at least five additional gems:
       - Wicked_Pdf and wkhtmltopdf: to convert to PDF format
       - Dynamoid: ORM for Amazon's DynamoDB for Ruby applications
-      - aws-sdk: simplifies using AWS services with an API tailored. 
+      - aws-sdk: simplifies using AWS services with an API tailored.
   - DynamoDB
   
 ### Front-end Technology
   - HTML and CSS rendered server side
-  
-### Infrastructure 
+
+### Infrastructure
   - Amazon SQS
   - Amazon S3
-  
+
 ### For the Rails App
 
-#### AWS Configuration 
+#### AWS Configuration
 Create config/initializers/aws.rb with:
 
  ```ruby
@@ -32,7 +32,7 @@ Create config/initializers/aws.rb with:
   })
 
 ```
- #### Dynamoid Configuration 
+ #### Dynamoid Configuration
  Create config/initializers/dynamoid.rb with:
  ```ruby
   require 'dynamoid'
@@ -55,9 +55,9 @@ end
 ### For the Resume Maker (background worker)
 
 - Create a queue in AWS Console
-- Create worker outside your rails app -- 
+- Create worker outside your rails app --
    ```resume_converter.rb```
 
-- Install gems to convert to pdf in your system 
-- Use this documentation for the code of receiving a message : 
+- Install gems to convert to pdf in your system
+- Use this documentation for the code of receiving a message :
 https://github.com/awsdocs/aws-doc-sdk-examples/blob/master/ruby/example_code/sqs/sqs-ruby-example-send-receive-messages.rb

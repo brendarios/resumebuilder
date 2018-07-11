@@ -1,0 +1,31 @@
+// Place all the styles related to the resumes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// h1 {
+//   color: red;
+//   font-size: 100pt
+// }
+
+.field {
+  width: 30%
+}
+
+.field-address {
+  width: 100%
+}
+
+
+.field-summary {
+  width: 100%;
+}
+
+.contact-details {
+  // display: grid;
+  // grid-template-columns: 1fr 1fr ;
+  // grid-template-rows: 1fr 1fr ;
+
+  display: flex;
+  flex-direction: row;
+  flex-flow:wrap;
+}

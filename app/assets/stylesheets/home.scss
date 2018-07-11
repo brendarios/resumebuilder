@@ -1,0 +1,38 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.welcome {
+  color: #336699;
+
+  font-family: 'Walter Turncoat', cursive;
+  background-color:  white;
+  text-align: center;
+  padding-bottom: 5%
+}
+.welcome h1 {
+  font-family: 'Walter Turncoat', cursive;
+  font-size: 4em;
+  padding-bottom: 5%;
+  padding-top: 3%
+
+}
+
+.home {
+  text-align: center;
+
+
+}
+
+.intro {
+  font-family: 'Walter Turncoat', cursive;
+
+  background-color: green
+
+}
+
+.button-area {
+  text-align: center;
+
+}
