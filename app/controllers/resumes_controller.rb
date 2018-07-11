@@ -17,6 +17,7 @@ class ResumesController < ApplicationController
 
     if @resume.save
       send_message
+      redirect_to new_resume_path
     else
       redirect_to 'new'
     end

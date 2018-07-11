@@ -1,1 +1,19 @@
-<h1> hello world </h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First Name:</strong>
+  <%= @resume.first_name %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @resume.last_name %>
+</p>
+
+<p>
+  <strong>Hobbies:</strong>
+  <%= @resume.hobbies %>
+</p>
+
+<%= link_to 'Edit', edit_resume_path(@resume) %> |
+<%= link_to 'See all resumes', resumes_path %>
