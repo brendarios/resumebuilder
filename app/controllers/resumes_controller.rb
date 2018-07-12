@@ -33,9 +33,18 @@ class ResumesController < ApplicationController
     redirect_to 'index'
   end
 
+  # def show
+  #   @resume = Resume.find(params['id'])
+  # end
+
   def show
-    @resume = Resume.find(params['id'])
+    respond_to do |format|
+      format.html
+      format.json
+
+    end
   end
+
 
 
 
@@ -43,6 +52,6 @@ class ResumesController < ApplicationController
     # resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, {education: [{}] })#, :experience, :education, :hobbies, :languages, :portfolio_url, :professional_skills)
     # params[:resume][:educations] ||= []
     # resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, educations: [:school, :degree_major, :description_edu], experiences: [:company, :position, :description_exp] )#, :experience, :education, :hobbies, :languages, :portfolio_url, :professional_skills)
-    resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp], educations: [:school, :degree_major, :description_edu] )
+    resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp], educations: [:school, :degree_major, :description_edu, :school2, :degree_major2, :description_edu2] )
   end
 end
