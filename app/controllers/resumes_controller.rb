@@ -8,7 +8,7 @@ class ResumesController < ApplicationController
 
   def new
     @resume = Resume.new
-    # 2.times { @resume.educations.build }
+
   end
 
   def create

@@ -4,7 +4,7 @@ def send_message
   sqs = Aws::SQS::Client.new(region: 'us-west-2')
 
   # Send a message to a queue.
-  queue_name = "resume_converter" 
+  queue_name = "my_first_queue" 
 
   begin
     queue_url = sqs.get_queue_url(queue_name: queue_name).queue_url
