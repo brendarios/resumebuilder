@@ -28,6 +28,7 @@ gem 'dynamoid', '~> 2'
 
 gem 'aws-sdk'
 
+gem 'foundation-rails'
 # gem 'aws-sdk-sqs'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
