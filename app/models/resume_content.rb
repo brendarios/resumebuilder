@@ -2,7 +2,7 @@ class ResumeContent
 
 
   attr_accessor :first_name, :last_name, :email, :phone, :summary, :school, :hobbies, :degree_major, :description_edu, :education, :position, :company, :description_exp,
-  :portfolio_url, :school2, :degree_major2, :description_edu2, :address
+  :portfolio_url, :school2, :degree_major2, :description_edu2, :address, :linkedin
 
 def initialize(resume_params)
   puts resume_params
@@ -11,6 +11,7 @@ def initialize(resume_params)
   @email = resume_params['contact_details']['email']
   @phone = resume_params['contact_details']['phone']
   @address = resume_params['contact_details']['address']
+  @linkedin = resume_params['contact_details']['linkedin']
   @summary = resume_params['summary']
   @school = resume_params['educations'][0]['school']
   @hobbies = resume_params['hobbies']
@@ -31,7 +32,8 @@ def dynamoid_dump
         "last_name": @last_name,
         "email": @email,
         "phone": @phone,
-        "address": @address
+        "address": @address,
+        "linkedin": @linkedin
 
       },
       "summary": @summary,
