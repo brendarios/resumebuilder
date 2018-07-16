@@ -29,6 +29,8 @@ gem 'dynamoid', '~> 2'
 gem 'aws-sdk'
 
 gem 'foundation-rails'
+
+gem "omniauth-google-oauth2", "~> 0.2.1"
 # gem 'aws-sdk-sqs'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
