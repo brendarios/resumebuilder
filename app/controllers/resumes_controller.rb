@@ -31,6 +31,7 @@ class ResumesController < ApplicationController
     @resume.resume_contents.last_name = params[:resume][:last_name]
     @resume.resume_contents.email = params[:resume][:email]
     @resume.resume_contents.phone = params[:resume][:phone]
+    @resume.resume_contents.address = params[:resume][:address]
     @resume.save
 
     redirect_to :sections
