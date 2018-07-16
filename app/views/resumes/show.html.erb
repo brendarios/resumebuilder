@@ -40,7 +40,7 @@
             <h1 class="name"><%=@resume.resume_contents.first_name %><%= @resume.resume_contents.last_name %>
               <span>Interactive Designer</span></h1>
             <ul>
-              <li class="ad">111 Lorem Street, 34785, Ipsum City</li>
+              <li class="ad"><%= @resume.resume_contents.address %></li>
               <li class="mail"><%=@resume.resume_contents.email%></li>
               <li class="tel"><%=@resume.resume_contents.phone%></li>
 							<% if !@resume.resume_contents.portfolio_url.empty? %>
