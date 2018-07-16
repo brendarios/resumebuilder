@@ -6,12 +6,39 @@
 
 
 Rails.application.routes.draw do
-  resources :people
+
   resources :resumes
     root 'home#index'
 
   get '/resumes/:id', to: 'resumes#show_pdf', as: 'resume_pdf'
 
+  get '/build-resume', to: 'resumes#sections', as: 'sections'
 
+  get '/build-resume/contact_details', to: 'resumes#contact_details'
+
+  patch '/build-resume/update_contact_details', to: 'resumes#update_contact_details'
+
+  get '/build-resume/summary', to: 'resumes#summary'
+
+  patch '/build-resume/update_summary', to: 'resumes#update_summary'
+
+  get '/build-resume/education', to: 'resumes#education'
+
+  patch '/build-resume/update_education', to: 'resumes#update_education'
+
+  get '/build-resume/experience', to: 'resumes#experience'
+
+  patch '/build-resume/update_experience', to: 'resumes#update_experience'
+
+  get '/build-resume/hobbies', to: 'resumes#hobbies'
+
+  patch '/build-resume/update_hobbies', to: 'resumes#update_hobbies'
+
+  get '/build-resume/others', to: 'resumes#others'
+
+  patch '/build-resume/update_others', to: 'resumes#update_others'
+
+
+  get '/build-resume/build', to: 'resumes#build_resume'
 
 end
