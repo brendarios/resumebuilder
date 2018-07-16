@@ -1,0 +1,53 @@
+<h1>Education</h1>
+
+
+<%= form_with(model: @resume, local: true, url: build_resume_update_education_path) do |form| %>
+<% if @resume.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
+
+  <ul>
+    <% @resume.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+
+<div class ="contact-details">
+
+
+  <div class="field">
+    <%= form.label :school %>
+    <%= form.text_field 'school', :value => @resume.resume_contents.school %>
+  </div>
+
+  <div class="field">
+    <%= form.label :degree_major %>
+    <%= form.text_field 'degree_major', :value => @resume.resume_contents.degree_major %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description_edu %>
+    <%= form.text_field 'description_edu', :value => @resume.resume_contents.description_edu %>
+  </div>
+
+</div>
+
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+
+
+<% end %>
+
+<div class ="button-area">
+<%= button_to 'Back', build_resume_summary_path, :class => "button", :method => "get" %>
+<div>
+
+<div class ="button-area">
+<%= button_to 'Next: Experience',build_resume_experience_path, :class => "button", :method => "get" %>
+<div>
