@@ -1,0 +1,53 @@
+<h1>Experience</h1>
+
+
+<%= form_with(model: @resume, local: true, url: build_resume_update_experience_path) do |form| %>
+<% if @resume.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
+
+  <ul>
+    <% @resume.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+
+<div class ="contact-details">
+
+
+  <div class="field">
+    <%= form.label :company %>
+    <%= form.text_field 'company', :value => @resume.resume_contents.company %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.text_field 'position', :value => @resume.resume_contents.position %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description_exp %>
+    <%= form.text_field 'description_exp', :value => @resume.resume_contents.description_exp %>
+  </div>
+
+</div>
+
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+
+
+<% end %>
+
+<div class ="button-area">
+<%= button_to 'Back', build_resume_education_path, :class => "button", :method => "get" %>
+<div>
+
+  <div class ="button-area">
+  <%= button_to 'Next: Hobbies', build_resume_hobbies_path, :class => "button", :method => "get" %>
+  <div>
