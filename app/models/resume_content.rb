@@ -5,22 +5,20 @@ class ResumeContent
   :portfolio_url, :school2, :degree_major2, :description_edu2
 
 def initialize(resume_params)
-  @first_name = resume_params[:contact_details][:first_name]
-  @last_name = resume_params[:contact_details][:last_name]
-  @email = resume_params[:contact_details][:email]
-  @phone = resume_params[:contact_details][:phone]
-  @summary = resume_params[:summary]
-  @school = resume_params[:educations][:school]
-  @hobbies = resume_params[:hobbies]
-  @degree_major = resume_params[:educations][:degree_major]
-  @description_edu = resume_params[:educations][:description_edu]
-  @school2 = resume_params[:educations][:school2]
-  @degree_major2 = resume_params[:educations][:degree_major2]
-  @description_edu2 = resume_params[:educations][:description_edu2]
-  @company = resume_params[:experiences][:company]
-  @position = resume_params[:experiences][:position]
-  @description_exp = resume_params[:experiences][:description_exp]
-  @portfolio_url = resume_params[:portfolio_url]
+  puts resume_params
+  @first_name = resume_params['contact_details']['first_name']
+  @last_name = resume_params['contact_details']['last_name']
+  @email = resume_params['contact_details']['email']
+  @phone = resume_params['contact_details']['phone']
+  @summary = resume_params['summary']
+  @school = resume_params['educations'][0]['school']
+  @hobbies = resume_params['hobbies']
+  @degree_major = resume_params['educations'][0]['degree_major']
+  @description_edu = resume_params['educations'][0]['description_edu']
+  @company = resume_params['experiences'][0]['company']
+  @position = resume_params['experiences'][0]['position']
+  @description_exp = resume_params['experiences'][0]['description_exp']
+  @portfolio_url = resume_params['portfolio_url']
 end
 
 def dynamoid_dump
@@ -42,11 +40,6 @@ def dynamoid_dump
           "degree_major": @degree_major,
           "description_edu": @description_edu
         },
-        {
-        "school2": @school2,
-        "degree_major2": @degree_major2,
-        "description_edu2": @description_edu2
-      }
 
 
       ],
@@ -67,7 +60,7 @@ end
 
 def self.dynamoid_load(serialized_str)
 
-    ResumeContents.new(JSON.parse(serialized_str))
+    ResumeContent.new(JSON.parse(serialized_str))
 end
 
 
