@@ -16,4 +16,11 @@ class Resume
   # accepts_nested_attributes_for :educations
   belongs_to :user
   field :resume_contents, ResumeContent
+  field :user_id, User
+  field :uid, User
+  field :provider, User
+  field :username, User
+  field :email, User
+
+
 end

@@ -51,6 +51,7 @@ class ResumesController < ApplicationController
     redirect_to :sections
   end
 
+
   def education
 
     @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
@@ -62,6 +63,17 @@ class ResumesController < ApplicationController
     @resume.resume_contents.school = params[:resume][:school]
     @resume.resume_contents.degree_major = params[:resume][:degree_major]
     @resume.resume_contents.description_edu = params[:resume][:description_edu]
+    @resume.resume_contents.school_location = params[:resume][:school_location]
+
+    @resume.resume_contents.school2 = params[:resume][:school2]
+    @resume.resume_contents.degree_major2 = params[:resume][:degree_major2]
+    @resume.resume_contents.description_edu2 = params[:resume][:description_edu2]
+    @resume.resume_contents.school_location2 = params[:resume][:school_location2]
+
+    @resume.resume_contents.school3 = params[:resume][:school3]
+    @resume.resume_contents.degree_major3 = params[:resume][:degree_major3]
+    @resume.resume_contents.description_edu3 = params[:resume][:description_edu3]
+    @resume.resume_contents.school_location3 = params[:resume][:school_location3]
 
     @resume.save
 
@@ -75,6 +87,7 @@ class ResumesController < ApplicationController
   def update_experience
     @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
     @resume.resume_contents.company = params[:resume][:company]
+    @resume.resume_contents.company_location = params[:resume][:company_location]
     @resume.resume_contents.position = params[:resume][:position]
     @resume.resume_contents.description_exp = params[:resume][:description_exp]
 
@@ -123,6 +136,10 @@ class ResumesController < ApplicationController
   end
 
   def create
+    @user = User.new(name: 'Josh')
+  
+    @user.save
+
     @resume = Resume.new
     @resume.resume_contents = ResumeContent.new(resume_params)
 
@@ -163,6 +180,7 @@ class ResumesController < ApplicationController
     # params[:resume][:educations] ||= []
     # resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, educations: [:school, :degree_major, :description_edu], experiences: [:company, :position, :description_exp] )#, :experience, :education, :hobbies, :languages, :portfolio_url, :professional_skills)
     # resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp], educations: [:school, :degree_major, :description_edu, :school2, :degree_major2, :description_edu2] )
-    resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp], educations: [:school, :degree_major, :description_edu] )
+    resume = params.require(:resume).permit(:id, :user_id, { contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp, :company_location], educations: [:school, :degree_major, :description_edu, :school_location, :school2, :school3, :degree_major2, :degree_major3, :school_location2, :school_location3, :description_edu2,
+       :description_edu3, :start_month_edu, :start_year_edu, :start_month_edu2, :start_year_edu2, :start_month_edu3, :start_year_edu3, :end_month_edu, :end_year_edu,:end_month_edu2, :end_year_edu2,:end_month_edu3, :end_year_edu3, ] )
   end
 end

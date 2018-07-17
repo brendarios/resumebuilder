@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   get '/build-resume/education', to: 'resumes#education'
 
+  post  '/build-resume/education', to: 'resumes#education'
+  
   patch '/build-resume/update_education', to: 'resumes#update_education'
 
   get '/build-resume/experience', to: 'resumes#experience'

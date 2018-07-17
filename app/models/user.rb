@@ -4,15 +4,28 @@ class User
   has_one :resume
 
 
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      user.oauth_token = auth.credentials.token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      user.save!
+  def self.get_user(data_hash)
+    user = User.find_by_uid(data_hash['uid'])
+    # user = data_hash['uid']
+    if user.nil?
+      user_data = {
+        uid: data_hash['uid'],
+        provider: data_hash['provider'],
+        username: data_hash['info']['name'],
+        email: data_hash['info']['email']
+      }
+
+      user = User.new(user_data)
+      return user.save ? user : nil
     end
+    return user
   end
 
+
+
+ # field :uid
+ # field :provider
+ # field :username
+ # field :email
+ # field :current_user
 end
