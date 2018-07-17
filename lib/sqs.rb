@@ -1,7 +1,7 @@
 require 'aws-sdk'  # v2: require 'aws-sdk'
 
 def send_message
-  sqs = Aws::SQS::Client.new(region: 'us-west-2')
+  sqs = Aws::SQS::Client.new(region: ENV['AWS_REGION'])
 
   # Send a message to a queue.
   queue_name = "my_first_queue"
