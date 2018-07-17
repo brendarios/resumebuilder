@@ -136,12 +136,13 @@ class ResumesController < ApplicationController
   end
 
   def create
-    @user = User.new(name: 'Josh')
-  
-    @user.save
+
+
+
 
     @resume = Resume.new
     @resume.resume_contents = ResumeContent.new(resume_params)
+    @resume.user = @current_user
 
     if @resume.save
       send_message
@@ -180,7 +181,7 @@ class ResumesController < ApplicationController
     # params[:resume][:educations] ||= []
     # resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, educations: [:school, :degree_major, :description_edu], experiences: [:company, :position, :description_exp] )#, :experience, :education, :hobbies, :languages, :portfolio_url, :professional_skills)
     # resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp], educations: [:school, :degree_major, :description_edu, :school2, :degree_major2, :description_edu2] )
-    resume = params.require(:resume).permit(:id, :user_id, { contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp, :company_location], educations: [:school, :degree_major, :description_edu, :school_location, :school2, :school3, :degree_major2, :degree_major3, :school_location2, :school_location3, :description_edu2,
+    resume = params.require(:resume).permit(:id, { contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp, :company_location], educations: [:school, :degree_major, :description_edu, :school_location, :school2, :school3, :degree_major2, :degree_major3, :school_location2, :school_location3, :description_edu2,
        :description_edu3, :start_month_edu, :start_year_edu, :start_month_edu2, :start_year_edu2, :start_month_edu3, :start_year_edu3, :end_month_edu, :end_year_edu,:end_month_edu2, :end_year_edu2,:end_month_edu3, :end_year_edu3, ] )
   end
 end

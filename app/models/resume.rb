@@ -14,13 +14,15 @@ class Resume
 
   # has_many :educations, inverse_of: :resume
   # accepts_nested_attributes_for :educations
-  belongs_to :user
+  belongs_to :user, class: User, inverse_of: :resume
   field :resume_contents, ResumeContent
-  field :user_id, User
-  field :uid, User
-  field :provider, User
-  field :username, User
-  field :email, User
+
+
+  # field :user_id, User
+  # field :uid, :integer
+  # field :provider, User
+  # field :username, User
+  # field :email, User
 
 
 end

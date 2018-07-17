@@ -1,11 +1,13 @@
 class User
   include Dynamoid::Document
 
-  has_one :resume
+  has_one :resume, class: Resume
 
 
   def self.get_user(data_hash)
-    user = User.find_by_uid(data_hash['uid'])
+
+
+    user = User.where(uid: data_hash['uid']).first
     # user = data_hash['uid']
     if user.nil?
       user_data = {
@@ -23,9 +25,9 @@ class User
 
 
 
- # field :uid
- # field :provider
- # field :username
- # field :email
- # field :current_user
+ field :uid, :integer
+ field :provider, :string
+ field :username, :string
+ field :email, :string
+
 end

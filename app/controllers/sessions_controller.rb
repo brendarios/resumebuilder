@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         redirect_to root_path
         return
       end
-      session[:user_id] = user
+      session[:uid] = user.uid
 
       redirect_to new_resume_path
       return
