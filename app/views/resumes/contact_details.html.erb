@@ -49,20 +49,17 @@
     <%= form.text_field 'linkedin', :value => @resume.resume_contents.linkedin %>
   </div>
 
-</div>
-
-
-<div class="actions">
-  <%= form.submit %>
-</div>
-
+  <div class="mybutton">
+    <%= form.submit %>
+  </div>
 
 <% end %>
 
-<div class ="button-area">
-<%= button_to 'Back', sections_path, :class => "button", :method => "get" %>
-<div>
 
-<div class ="button-area">
+<%= button_to 'Back', sections_path, :class => "button", :method => "get" %>
+
+
+
 <%= button_to 'Next: Summary', build_resume_summary_path, :class => "button", :method => "get" %>
-<div>
+
+</div>
