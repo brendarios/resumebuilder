@@ -4,22 +4,23 @@
 
 .container {
 
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
-
-
-
+// display: flex;
+// flex-direction: column;
+// flex-wrap: wrap;
 color: #336699;
+height: 100%;
 
 font-family: 'Walter Turncoat', cursive;
-background-color:  red;
+// background-color:  blue;
 text-align: center;
 padding-bottom: 5%;
 font-size: 15pt
 
 }
 
+.container div {
+  margin: 3px auto
+}
 
 // .welcome {
 //   color: #336699;
@@ -54,16 +55,23 @@ font-size: 15pt
   padding-bottom: 5%;
   padding-top: 3%;
   font-weight: bold;
+  margin: 3px auto
 
 
 }
 
+.container p {
+  margin-left: 20px;
+  margin-right: 20px
+
+}
 
 .container h2 {
   font-family: 'Walter Turncoat', cursive;
   font-size: 2em;
 
   font-weight: bold;
+  margin: 20px auto
 
 
 }
@@ -80,7 +88,11 @@ font-size: 15pt
 
 }
 
-.button-area {
+.button{
   text-align: center;
+  margin-left: 1%;
+  margin-right: 40%;
+  margin-top: 5%
+
 
 }
