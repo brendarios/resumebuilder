@@ -14,20 +14,14 @@
  *
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
+
 
  */
 
- body {
-   background-color: white
 
- }
-.container {
-   display: flex;
-   flex-direction: column;
-   flex-wrap:wrap;
 
- }
+
+
 
 .login {
   align-content:flex-end;

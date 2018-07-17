@@ -8,7 +8,7 @@
 // }
 
 .field {
-  width: 50%
+  width: 60%
 }
 
 .field-address {
@@ -25,13 +25,13 @@
 }
 
 .contact-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr ;
-  grid-template-rows: 1fr 1fr ;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr ;
+  // grid-template-rows: 1fr 1fr;
 
-  // display: flex;
-  // flex-direction: column;
-  // flex-flow:wrap;
+  display: flex;
+  flex-direction: row;
+  flex-flow:wrap;
 
   text-align: center;
   line-height: 3.0;
@@ -40,15 +40,16 @@
 
 }
 
-.actions {
-  text-align: center
-}
+
 .sections {
   text-align: center;
   padding-top: 15%;
   font-size: 20pt;
 }
 
+.mybutton {
+  text-align: center;
+}
 
 .paragraph {
   margin-top: 1%

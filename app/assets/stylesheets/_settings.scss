@@ -290,7 +290,7 @@ $button-radius: $global-radius;
 $button-hollow-border-width: 1px;
 $button-sizes: (
   tiny: 0.6rem,
-  small: 0.75rem,
+  small: 0.9rem,
   default: 0.9rem,
   large: 1.25rem,
 );
@@ -421,7 +421,7 @@ $input-prefix-background: $light-gray;
 $input-prefix-border: 1px solid $medium-gray;
 $input-prefix-padding: 1rem;
 $form-label-color: $black;
-$form-label-font-size: rem-calc(14);
+$form-label-font-size: rem-calc(20);
 $form-label-font-weight: $global-weight-normal;
 $form-label-line-height: 1.8;
 $select-background: $white;
@@ -454,7 +454,7 @@ $label-background: $primary-color;
 $label-color: $white;
 $label-color-alt: $black;
 $label-palette: $foundation-palette;
-$label-font-size: 0.8rem;
+$label-font-size: 1rem;
 $label-padding: 0.33333rem 0.5rem;
 $label-radius: $global-radius;
 
@@ -866,4 +866,3 @@ $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
-

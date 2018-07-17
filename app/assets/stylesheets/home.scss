@@ -2,33 +2,71 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.container {
 
-.welcome {
-  color: #336699;
+// display: flex;
+// flex-direction: column;
+// flex-wrap: wrap;
 
-  font-family: 'Walter Turncoat', cursive;
-  background-color:  white;
-  text-align: center;
-  padding-bottom: 5%;
-  font-size: 15pt
+
+
+color: #336699;
+
+font-family: 'Walter Turncoat', cursive;
+background-color:  red;
+text-align: center;
+padding-bottom: 5%;
+font-size: 15pt
+
 }
-.welcome h1 {
+
+
+// .welcome {
+//   color: #336699;
+//
+//   font-family: 'Walter Turncoat', cursive;
+//   background-color:  red;
+//   text-align: center;
+//   padding-bottom: 5%;
+//   font-size: 15pt
+// }
+// .welcome h1 {
+//   font-family: 'Walter Turncoat', cursive;
+//   font-size: 1em;
+//   padding-bottom: 5%;
+//   padding-top: 3%;
+//   font-weight: bold;
+//
+// }
+//
+// .welcome h2 {
+//   font-family: 'Walter Turncoat', cursive;
+//   font-size: 2em;
+//
+//   font-weight: bold;
+//
+// }
+
+
+.container h1 {
   font-family: 'Walter Turncoat', cursive;
   font-size: 1em;
   padding-bottom: 5%;
   padding-top: 3%;
   font-weight: bold;
 
+
 }
 
-.welcome h2 {
+
+.container h2 {
   font-family: 'Walter Turncoat', cursive;
   font-size: 2em;
 
   font-weight: bold;
 
-}
 
+}
 .home {
   text-align: center;
 
@@ -41,8 +79,8 @@
   background-color: green
 
 }
-// 
-// .button-area {
-//   text-align: center;
-//
-// }
+
+.button-area {
+  text-align: center;
+
+}
