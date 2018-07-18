@@ -10,11 +10,14 @@ Rails.application.routes.draw do
   resources :resumes
     root 'home#index'
 
+  
   get '/resumes/:id', to: 'resumes#show_pdf', as: 'resume_pdf'
 
   get '/build-resume', to: 'resumes#sections', as: 'sections'
 
   get '/build-resume/contact_details', to: 'resumes#contact_details'
+
+  post '/build-resume/contact_details', to: 'resumes#contact_details'
 
   patch '/build-resume/update_contact_details', to: 'resumes#update_contact_details'
 
@@ -25,7 +28,7 @@ Rails.application.routes.draw do
   get '/build-resume/education', to: 'resumes#education'
 
   post  '/build-resume/education', to: 'resumes#education'
-  
+
   patch '/build-resume/update_education', to: 'resumes#update_education'
 
   get '/build-resume/experience', to: 'resumes#experience'

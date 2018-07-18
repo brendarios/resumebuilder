@@ -27,7 +27,13 @@
     <%= link_to 'Others', build_resume_others_path %>
   </div>
 
-  <div>
-    <%= link_to 'Build resume', build_resume_build_path %>
+  <div class ="button-area">
+  <%= link_to 'Preview Resume', '/resumes/:id' %>
   </div>
+
+  <div>
+    <%= button_to 'Build resume', build_resume_build_path, :class => "button", :method => "get" %>
+  </div>
+
+
 </section>
