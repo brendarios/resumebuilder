@@ -89,6 +89,7 @@ class ResumesController < ApplicationController
   end
 
   def build_resume
+    send_message
   end
 
   def hobbies
@@ -138,7 +139,7 @@ class ResumesController < ApplicationController
     @resume.user_uid = session[:uid]
 
     if @resume.save
-      send_message
+      # send_message
       redirect_to new_resume_path
     else
       redirect_to :new
