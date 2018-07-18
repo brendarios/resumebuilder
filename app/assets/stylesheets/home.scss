@@ -8,13 +8,13 @@
 // flex-direction: column;
 // flex-wrap: wrap;
 color: #336699;
-height: 100%;
+// height: 100%;
 
 font-family: 'Walter Turncoat', cursive;
-// background-color:  blue;
+background-color:  white;
 text-align: center;
 padding-bottom: 5%;
-background-color: white
+
 
 }
 
@@ -23,38 +23,12 @@ background-color: white
 
 }
 
-// .welcome {
-//   color: #336699;
-//
-//   font-family: 'Walter Turncoat', cursive;
-//   background-color:  red;
-//   text-align: center;
-//   padding-bottom: 5%;
-//   font-size: 15pt
-// }
-// .welcome h1 {
-//   font-family: 'Walter Turncoat', cursive;
-//   font-size: 1em;
-//   padding-bottom: 5%;
-//   padding-top: 3%;
-//   font-weight: bold;
-//
-// }
-//
-// .welcome h2 {
-//   font-family: 'Walter Turncoat', cursive;
-//   font-size: 2em;
-//
-//   font-weight: bold;
-//
-// }
-
 
 .container h1 {
   font-family: 'Walter Turncoat', cursive;
-  font-size: 2em;
-  padding-bottom: 5%;
-  padding-top: 3%;
+  font-size: 3em;
+  padding-bottom: 2%;
+  padding-top: 2%;
   font-weight: bold;
   margin: 3px auto
 
@@ -69,9 +43,12 @@ background-color: white
 
 .container h2 {
   font-family: 'Walter Turncoat', cursive;
-  font-size: 2em;
+  font-size: 1em;
+  padding-bottom: 2%;
+  padding-top: 2%;
   font-weight: bold;
-  margin: 20px auto
+  // margin: 3px auto;
+  margin-left: 44%
 
 
 }
@@ -79,6 +56,10 @@ background-color: white
   text-align: center;
 
 
+}
+
+.homepage-picture {
+  opacity: 0.7;
 }
 
 .intro {

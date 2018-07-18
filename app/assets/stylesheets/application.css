@@ -18,7 +18,8 @@
 
  */
 body {
-  height: 700px
+  height: 700px;
+  background-color: white
 }
 
 
@@ -29,5 +30,15 @@ body {
   align-content:flex-end;
   align-self:flex-end;
   padding-right: 5%;
-  padding-top:2%
+  padding-top:2%;
+  margin-left: 80%;
+  background-color: white;
+
+}
+
+.login a {
+  color: #0066cc;
+  /* font-size: 13pt;
+  background-color: #f2f2f2;
+  padding: 10px */
 }
