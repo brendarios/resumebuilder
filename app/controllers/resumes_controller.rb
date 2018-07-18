@@ -1,27 +1,38 @@
 require 'sqs'
 
 class ResumesController < ApplicationController
+  before_action :set_resume , only:[:contact_details, :update_contact_details]
+
 
   def sections
 
   end
 
+  def set_resume
+    if session[:uid]
+      @resume = Resume.find_by_user_uid(session[:uid])
+    else
+      @resume = Resume.new
+    end
+  end
+
   def contact_details
     # @resume = Resume.new
 
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
+    # @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
+
     # @resume = current_user.get_resume @todo
     # @resume = Resume.new if @resume.nil?
-    p @resume
+    # p @resume
 
     # resume.resume_contents.first_name
 
   end
 
   def update_contact_details
-    puts params
+    # puts params
 
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
+    # @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
     # @resume = Resume.find(params[:id]) @todo
     # puts @resume.resume_contents.contact_details
 
@@ -131,18 +142,22 @@ class ResumesController < ApplicationController
   end
 
   def new
-    @resume = Resume.new
+    # @resume = Resume.new
+    if session[:uid]
 
+      @resume = Resume.find_by_user_uid(session[:uid])
+    else
+      @resume = Resume.new
+    end
   end
 
   def create
 
-
-
-
     @resume = Resume.new
     @resume.resume_contents = ResumeContent.new(resume_params)
-    @resume.user = @current_user
+    # @resume.user = @current_user
+
+    @resume.user_uid = session[:uid]
 
     if @resume.save
       send_message
@@ -174,14 +189,12 @@ class ResumesController < ApplicationController
   end
 
 
-
-
   def resume_params
     # resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, {education: [{}] })#, :experience, :education, :hobbies, :languages, :portfolio_url, :professional_skills)
     # params[:resume][:educations] ||= []
     # resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, educations: [:school, :degree_major, :description_edu], experiences: [:company, :position, :description_exp] )#, :experience, :education, :hobbies, :languages, :portfolio_url, :professional_skills)
     # resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp], educations: [:school, :degree_major, :description_edu, :school2, :degree_major2, :description_edu2] )
-    resume = params.require(:resume).permit(:id, { contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp, :company_location], educations: [:school, :degree_major, :description_edu, :school_location, :school2, :school3, :degree_major2, :degree_major3, :school_location2, :school_location3, :description_edu2,
+    resume = params.require(:resume).permit(:id, :user_uid, { contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp, :company_location], educations: [:school, :degree_major, :description_edu, :school_location, :school2, :school3, :degree_major2, :degree_major3, :school_location2, :school_location3, :description_edu2,
        :description_edu3, :start_month_edu, :start_year_edu, :start_month_edu2, :start_year_edu2, :start_month_edu3, :start_year_edu3, :end_month_edu, :end_year_edu,:end_month_edu2, :end_year_edu2,:end_month_edu3, :end_year_edu3, ] )
   end
 end

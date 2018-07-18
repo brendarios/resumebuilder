@@ -26,6 +26,7 @@ class User
 
 
  field :uid, :integer
+ global_secondary_index hash_key: :uid
  field :provider, :string
  field :username, :string
  field :email, :string

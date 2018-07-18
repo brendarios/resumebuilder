@@ -21,7 +21,7 @@
 
   <div class="field">
     <%= form.label :first_name %>
-    <%= form.text_field 'first_name', :value => @resume.resume_contents.first_name %>
+    <%= form.text_field 'first_name', :value => (@resume.id ? @resume.resume_contents.first_name : " ") %>
   </div>
 
   <div class="field">
