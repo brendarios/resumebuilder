@@ -21,7 +21,7 @@
 
   <div class="field-summary">
     <%= form.label :summary %>
-    <%= form.text_field 'summary', :value => @resume.resume_contents.summary, :class => "summary-area" %>
+    <%= form.text_field 'summary', :value => (@resume.id ? @resume.resume_contents.summary : " "), :class => "summary-area" %>
   </div>
 
 

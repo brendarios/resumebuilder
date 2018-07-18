@@ -21,17 +21,17 @@
 
   <div class="field">
     <%= form.label :company %>
-    <%= form.text_field 'company', :value => @resume.resume_contents.company %>
+    <%= form.text_field 'company', :value => (@resume.id ? @resume.resume_contents.company : " ") %>
   </div>
 
   <div class="field">
     <%= form.label :position %>
-    <%= form.text_field 'position', :value => @resume.resume_contents.position %>
+    <%= form.text_field 'position', :value => (@resume.id ? @resume.resume_contents.position : " ") %>
   </div>
 
   <div class="field">
     <%= form.label :description_exp %>
-    <%= form.text_field 'description_exp', :value => @resume.resume_contents.description_exp %>
+    <%= form.text_field 'description_exp', :value => (@resume.id ? @resume.resume_contents.description_exp : " ") %>
   </div>
 
 </div>

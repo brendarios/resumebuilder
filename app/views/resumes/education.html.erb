@@ -21,22 +21,22 @@
   <div>
     <div class="field">
       <%= form.label :school %>
-      <%= form.text_field 'school', :value => @resume.resume_contents.school %>
+      <%= form.text_field 'school', :value => (@resume.id ? @resume.resume_contents.school : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :degree_major %>
-      <%= form.text_field 'degree_major', :value => @resume.resume_contents.degree_major %>
+      <%= form.text_field 'degree_major', :value => (@resume.id ? @resume.resume_contents.degree_major : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :description_edu %>
-      <%= form.text_field 'description_edu', :value => @resume.resume_contents.description_edu %>
+      <%= form.text_field 'description_edu', :value => (@resume.id ? @resume.resume_contents.description_edu : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :school_location %>
-      <%= form.text_field 'school_location', :value => @resume.resume_contents.school_location %>
+      <%= form.text_field 'school_location', :value => (@resume.id ? @resume.resume_contents.school_location : " ") %>
     </div>
 
     <div>
@@ -62,22 +62,22 @@
   <div>
     <div class="field">
       <%= form.label :school2 %>
-      <%= form.text_field 'school2', :value => @resume.resume_contents.school2 %>
+      <%= form.text_field 'school2', :value => (@resume.id ? @resume.resume_contents.school2 : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :degree_major2 %>
-      <%= form.text_field 'degree_major2', :value => @resume.resume_contents.degree_major2 %>
+      <%= form.text_field 'degree_major2', :value => (@resume.id ? @resume.resume_contents.degree_major2 : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :description_edu2 %>
-      <%= form.text_field 'description_edu2', :value => @resume.resume_contents.description_edu2 %>
+      <%= form.text_field 'description_edu2', :value => (@resume.id ? @resume.resume_contents.description_edu2 : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :school_location2 %>
-      <%= form.text_field 'school_location2', :value => @resume.resume_contents.school_location2 %>
+      <%= form.text_field 'school_location2', :value => (@resume.id ? @resume.resume_contents.school_location2 : " ") %>
     </div>
 
   </div>
@@ -85,22 +85,22 @@
   <div>
     <div class="field">
       <%= form.label :school3 %>
-      <%= form.text_field 'school3', :value => @resume.resume_contents.school3 %>
+      <%= form.text_field 'school3', :value => (@resume.id ? @resume.resume_contents.school3 : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :degree_major3 %>
-      <%= form.text_field 'degree_major3', :value => @resume.resume_contents.degree_major3 %>
+      <%= form.text_field 'degree_major3', :value => (@resume.id ? @resume.resume_contents.degree_major3 : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :description_edu3 %>
-      <%= form.text_field 'description_edu3', :value => @resume.resume_contents.description_edu3 %>
+      <%= form.text_field 'description_edu3', :value => (@resume.id ? @resume.resume_contents.description_edu3 : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :school_location3 %>
-      <%= form.text_field 'school_location3', :value => @resume.resume_contents.school_location3 %>
+      <%= form.text_field 'school_location3', :value => (@resume.id ? @resume.resume_contents.school_location3 : " ") %>
     </div>
 
   </div>
