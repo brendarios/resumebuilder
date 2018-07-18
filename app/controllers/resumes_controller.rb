@@ -1,7 +1,8 @@
 require 'sqs'
 
 class ResumesController < ApplicationController
-  before_action :set_resume , only:[:contact_details, :update_contact_details]
+  before_action :set_resume , only:[:contact_details, :update_contact_details, :summary, :update_summary,
+  :education, :update_education, :experience, :update_experience, :hobbies, :update_hobbies, :others, :update_others]
 
 
   def sections
@@ -17,26 +18,10 @@ class ResumesController < ApplicationController
   end
 
   def contact_details
-    # @resume = Resume.new
-
-    # @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
-
-    # @resume = current_user.get_resume @todo
-    # @resume = Resume.new if @resume.nil?
-    # p @resume
-
-    # resume.resume_contents.first_name
 
   end
 
   def update_contact_details
-    # puts params
-
-    # @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
-    # @resume = Resume.find(params[:id]) @todo
-    # puts @resume.resume_contents.contact_details
-
-    # @resume.resume_contents.first_name
 
     @resume.resume_contents.first_name = params[:resume][:first_name]
     @resume.resume_contents.last_name = params[:resume][:last_name]
@@ -49,13 +34,12 @@ class ResumesController < ApplicationController
   end
 
   def summary
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
+
   end
 
 
   def update_summary
 
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
     @resume.resume_contents.summary = params[:resume][:summary]
     @resume.save
 
@@ -64,13 +48,10 @@ class ResumesController < ApplicationController
 
 
   def education
-
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
   end
 
   def update_education
 
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
     @resume.resume_contents.school = params[:resume][:school]
     @resume.resume_contents.degree_major = params[:resume][:degree_major]
     @resume.resume_contents.description_edu = params[:resume][:description_edu]
@@ -92,11 +73,11 @@ class ResumesController < ApplicationController
   end
 
   def experience
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
+
   end
 
   def update_experience
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
+
     @resume.resume_contents.company = params[:resume][:company]
     @resume.resume_contents.company_location = params[:resume][:company_location]
     @resume.resume_contents.position = params[:resume][:position]
@@ -111,13 +92,10 @@ class ResumesController < ApplicationController
   end
 
   def hobbies
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
 
   end
 
   def update_hobbies
-
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
     @resume.resume_contents.hobbies = params[:resume][:hobbies]
     @resume.save
 
@@ -126,23 +104,23 @@ class ResumesController < ApplicationController
   end
 
   def others
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
+
   end
 
   def update_others
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
+
     @resume.resume_contents.portfolio_url = params[:resume][:portfolio_url]
     @resume.save
 
     redirect_to :sections
-
   end
+
   def index
     @resumes = Resume.all
   end
 
   def new
-    # @resume = Resume.new
+
     if session[:uid]
 
       @resume = Resume.find_by_user_uid(session[:uid])
@@ -155,7 +133,7 @@ class ResumesController < ApplicationController
 
     @resume = Resume.new
     @resume.resume_contents = ResumeContent.new(resume_params)
-    # @resume.user = @current_user
+
 
     @resume.user_uid = session[:uid]
 
@@ -174,7 +152,7 @@ class ResumesController < ApplicationController
   def delete
     @resume = Resume.find(params['id'])
     @resume.delete
-    redirect_to 'index'
+    redirect_to :index
   end
 
   # def show
@@ -182,18 +160,16 @@ class ResumesController < ApplicationController
   # end
 
   def show
-    @resume = Resume.find('33308c95-2f1d-413f-b241-52711e23a6f0')
-    # respond_to do |format|
-    #   format.html
-    #   format.json
+    if session[:uid]
+      @resume = Resume.find_by_user_uid(session[:uid])
+    else
+      @resume = Resume.find_by_id(params[:id])
+    end
   end
 
 
   def resume_params
-    # resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, {education: [{}] })#, :experience, :education, :hobbies, :languages, :portfolio_url, :professional_skills)
-    # params[:resume][:educations] ||= []
-    # resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, educations: [:school, :degree_major, :description_edu], experiences: [:company, :position, :description_exp] )#, :experience, :education, :hobbies, :languages, :portfolio_url, :professional_skills)
-    # resume = params.require(:resume).permit({ contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp], educations: [:school, :degree_major, :description_edu, :school2, :degree_major2, :description_edu2] )
+
     resume = params.require(:resume).permit(:id, :user_uid, { contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp, :company_location], educations: [:school, :degree_major, :description_edu, :school_location, :school2, :school3, :degree_major2, :degree_major3, :school_location2, :school_location3, :description_edu2,
        :description_edu3, :start_month_edu, :start_year_edu, :start_month_edu2, :start_year_edu2, :start_month_edu3, :start_year_edu3, :end_month_edu, :end_year_edu,:end_month_edu2, :end_year_edu2,:end_month_edu3, :end_year_edu3, ] )
   end

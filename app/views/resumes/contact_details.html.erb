@@ -26,27 +26,27 @@
 
   <div class="field">
     <%= form.label :last_name %>
-    <%= form.text_field 'last_name', :value => @resume.resume_contents.last_name %>
+    <%= form.text_field 'last_name', :value => (@resume.id ? @resume.resume_contents.last_name : " ") %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field 'email', :value => @resume.resume_contents.email %>
+    <%= form.text_field 'email', :value => (@resume.id ? @resume.resume_contents.email : " ") %>
   </div>
 
   <div class="field">
     <%= form.label :phone %>
-    <%= form.text_field 'phone', :value => @resume.resume_contents.phone %>
+    <%= form.text_field 'phone', :value => (@resume.id ? @resume.resume_contents.phone : " ") %>
   </div>
 
   <div class="field">
     <%= form.label :address %>
-    <%= form.text_field 'address', :value => @resume.resume_contents.address %>
+    <%= form.text_field 'address', :value => (@resume.id ? @resume.resume_contents.address : " ") %>
   </div>
 
   <div class="field">
     <%= form.label :linkedin %>
-    <%= form.text_field 'linkedin', :value => @resume.resume_contents.linkedin %>
+    <%= form.text_field 'linkedin', :value => (@resume.id ? @resume.resume_contents.linkedin : " ") %>
   </div>
 
   <div class="mybutton">
