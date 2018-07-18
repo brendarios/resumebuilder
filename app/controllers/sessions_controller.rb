@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       end
       session[:uid] = user.uid
 
-      redirect_to new_resume_path
+      redirect_to sections_path
       return
     else
       flash[:error] = 'Could not log in'
