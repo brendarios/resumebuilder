@@ -37,7 +37,7 @@
           <div class="self">
 
 
-            <h1 class="name"><%=@resume.resume_contents.first_name %><%= @resume.resume_contents.last_name %>
+            <h1 class="name"><%=@resume.resume_contents.first_name %> <%= @resume.resume_contents.last_name %>
               <span>Interactive Designer</span></h1>
             <ul>
               <li class="ad"><%= @resume.resume_contents.address %></li>
@@ -45,6 +45,9 @@
               <li class="tel"><%=@resume.resume_contents.phone%></li>
 							<% if !@resume.resume_contents.portfolio_url.empty? %>
               <li class="web"><%=@resume.resume_contents.portfolio_url%></li>
+							<%end%>
+							<% if !@resume.resume_contents.linkedin.empty? %>
+              <li class="web"><%=@resume.resume_contents.linkedin%></li>
 							<%end%>
             </ul>
           </div>
@@ -55,23 +58,23 @@
         </div>
         <!-- Begin 1st Row -->
         <div class="entry">
-          <h2>OBJECTIVE</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim viverra nibh sed varius. Proin bibendum nunc in sem ultrices posuere. Aliquam ut aliquam lacus.</p>
+          <h2>SUMMARY</h2>
+          <p>Change agent, able to look at challenges from multiple aspects and beyond scope of responsibilities to transform multiple business lines</p>
         </div>
         <!-- End 1st Row -->
         <!-- Begin 2nd Row -->
         <div class="entry">
           <h2>EDUCATION</h2>
           <div class="content">
-            <h3>Sep 2005 - Feb 2007</h3>
-            <p>Academy of Art University, London <br />
-              <em>Master in Communication Design</em></p>
+						<h3><%=@resume.resume_contents.start_month_edu%> <%=@resume.resume_contents.start_year_edu%>-<h3><%=@resume.resume_contents.end_month_edu%> <%=@resume.resume_contents.end_year_edu%>
+            <p><%=@resume.resume_contents.school%><br />
+              <em><%=@resume.resume_contents.degree_major%></em></p>
           </div>
-          <div class="content">
+          <!-- <div class="content">
             <h3>Sep 2001 - Jun 2005</h3>
             <p>University of Art &amp; Design, New York <br />
               <em>Bachelor of Science in Graphic Design</em></p>
-          </div>
+          </div> -->
         </div>
         <!-- End 2nd Row -->
         <!-- Begin 3rd Row -->
@@ -79,10 +82,11 @@
           <h2>EXPERIENCE</h2>
           <div class="content">
             <h3>May 2009 - Feb 2010</h3>
+						<h3><%=@resume.resume_contents.start_month_exp%> <%=@resume.resume_contents.start_year_exp%>-<h3><%=@resume.resume_contents.end_month_exp%> <%=@resume.resume_contents.end_year_exp%>
             <p><%=@resume.resume_contents.company%><br />
               <em><%=@resume.resume_contents.position%></em></p>
             <ul class="info">
-              <li>Vestibulum eu ante massa, sed rhoncus velit.</li>
+              <li><%=@resume.resume_contents.company%></li>
               <li>Pellentesque at lectus in <a href="#">libero dapibus</a> cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.</li>
             </ul>
           </div>

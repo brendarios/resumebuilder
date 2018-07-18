@@ -81,8 +81,38 @@ h2 {
 }
 
 
+.thankyou {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  vertical-align: center;
+  padding-left: 25%;
+  font-size: 15pt;
 
 
+    background-color: red;
+
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+.thankyou .emailsent {
+  padding-top: 10%
+
+}
+
+.thankyou .recommendation {
+  line-height: 170%;
+  padding-top: 10%
+}
 @charset "UTF-8";
 /* RESET */
 /* ----------------------------------------- */

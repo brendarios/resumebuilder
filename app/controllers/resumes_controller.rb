@@ -91,7 +91,12 @@ class ResumesController < ApplicationController
   end
 
   def build_resume
-    send_message
+    if session[:uid]
+      @resume = Resume.find_by_user_uid(session[:uid])
+    else
+      @resume = Resume.find_by_id(params[:id])
+    end
+    # send_message
   end
 
   def hobbies
