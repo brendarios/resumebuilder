@@ -14,6 +14,7 @@ class ResumesController < ApplicationController
       @resume = Resume.find_by_user_uid(session[:uid])
     else
       @resume = Resume.new
+
     end
   end
 
@@ -28,6 +29,7 @@ class ResumesController < ApplicationController
     @resume.resume_contents.email = params[:resume][:email]
     @resume.resume_contents.phone = params[:resume][:phone]
     @resume.resume_contents.address = params[:resume][:address]
+    @resume.resume_contents.linkedin = params[:resume][:linkedin]
     @resume.save
 
     redirect_to :sections
