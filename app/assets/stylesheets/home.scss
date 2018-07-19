@@ -19,18 +19,20 @@ padding-bottom: 5%;
 }
 
 .container div {
-  margin-left: -5%;
+  //margin-left: -5%;
 
 }
 
 
 .container h1 {
   font-family: 'Walter Turncoat', cursive;
-  font-size: 3em;
+  font-size: 4em;
   padding-bottom: 2%;
   padding-top: 2%;
   font-weight: bold;
-  margin: 3px auto;
+  margin: auto;
+  width: 100%;
+  text-align: center;
 }
 
 .container p {
@@ -39,20 +41,27 @@ padding-bottom: 5%;
 
 }
 
-.container h2 {
+.container h4 {
   font-family: 'Walter Turncoat', cursive;
   font-size: 1.2em;
   padding-bottom: 4%;
   padding-top: 2%;
   font-weight: bold;
-  margin-left: 44%;
   line-height: 120%;
   text-align: center;
 }
 .home {
   text-align: center;
+}
 
-
+.slogan
+{
+  //text-align: center;
+  margin: auto;
+  width: 35%;
+  padding-bottom: 3%;
+  line-height: 180%;
+  font-size: 1.4em
 }
 
 .homepage-picture {
@@ -67,13 +76,12 @@ padding-bottom: 5%;
 }
 
 .button{
-  text-align: center;
-  margin-left: 12%;
-  margin-right: 42.5%;
-  margin-top: 3%;
+  float: none;
+  margin: 0 auto;
   vertical-align: middle;
   width: 200px;
   height: 70px;
+
 
 
 }
