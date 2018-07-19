@@ -1,5 +1,6 @@
 {
   "AWS_REGION": "us-west-2",
   "RESUMES_TABLE": "resumes",
+  "USERS_TABLE": "users",
 
 }
