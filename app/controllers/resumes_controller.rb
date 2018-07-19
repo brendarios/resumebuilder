@@ -2,7 +2,7 @@ require 'sqs'
 
 class ResumesController < ApplicationController
   before_action :set_resume , only:[:contact_details, :update_contact_details, :summary, :update_summary,
-  :education, :update_education, :experience, :update_experience, :hobbies, :update_hobbies, :others, :update_others]
+  :education, :update_education, :experience, :update_experience, :hobbies, :update_hobbies, :others, :update_others, :skills, :update_skills]
 
 
   def sections
@@ -90,6 +90,7 @@ class ResumesController < ApplicationController
     redirect_to :sections
   end
 
+
   def build_resume
     if session[:uid]
       @resume = Resume.find_by_user_uid(session[:uid])
@@ -105,6 +106,22 @@ class ResumesController < ApplicationController
 
   def update_hobbies
     @resume.resume_contents.hobbies = params[:resume][:hobbies]
+    @resume.save
+
+    redirect_to :sections
+
+  end
+
+  def skills
+
+  end
+
+  def update_skills
+
+    @resume.resume_contents.languages = params[:resume][:languages]
+    @resume.resume_contents.databases = params[:resume][:databases]
+    @resume.resume_contents.frameworks = params[:resume][:frameworks]
+    @resume.resume_contents.operating_systems = params[:resume][:operating_systems]
     @resume.save
 
     redirect_to :sections
@@ -178,7 +195,7 @@ class ResumesController < ApplicationController
 
   def resume_params
 
-    resume = params.require(:resume).permit(:id, :user_uid, { contact_details: {} }, :summary, :hobbies, :portfolio_url, experiences: [:company, :position, :description_exp, :company_location], educations: [:school, :degree_major, :description_edu, :school_location, :school2, :school3, :degree_major2, :degree_major3, :school_location2, :school_location3, :description_edu2,
-       :description_edu3, :start_month_edu, :start_year_edu, :start_month_edu2, :start_year_edu2, :start_month_edu3, :start_year_edu3, :end_month_edu, :end_year_edu,:end_month_edu2, :end_year_edu2,:end_month_edu3, :end_year_edu3, ] )
+    resume = params.require(:resume).permit(:id, :user_uid, :github, { contact_details: {} }, :summary, :hobbies, { skills: {}}, experiences: [:company, :position, :description_exp, :company_location], educations: [:school, :degree_major, :description_edu, :school_location, :school2, :school3, :degree_major2,
+      :degree_major3,:school_location2, :school_location3, :description_edu2,:description_edu3, :start_month_edu, :start_year_edu, :start_month_edu2, :start_year_edu2, :start_month_edu3, :start_year_edu3, :end_month_edu, :end_year_edu,:end_month_edu2, :end_year_edu2,:end_month_edu3, :end_year_edu3, ] )
   end
 end

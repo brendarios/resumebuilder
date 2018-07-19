@@ -5,7 +5,7 @@ class ResumeContent
   :portfolio_url, :school2, :degree_major2, :description_edu2, :address, :linkedin, :school3, :degree_major3, :description_edu3, :school_location, :school_location2, :school_location3,
   :start_month_edu, :start_month_edu2, :start_month_edu3, :end_month_edu, :end_month_edu2, :end_month_edu3, :start_year_edu, :start_year_edu2, :start_year_edu3, :end_year_edu, :end_year_edu2,
   :end_year_edu3, :company_location, :company_location2, :company_location3, :start_month_exp, :start_month_exp2, :start_month_exp3, :end_month_exp, :end_month_exp2, :end_month_exp3, :start_year_exp, :start_year_exp2, :start_year_exp3, :end_year_exp, :end_year_exp2,
-  :end_year_exp3, :company2, :position2, :description_exp2, :company3, :position3, :description_exp3
+  :end_year_exp3, :company2, :position2, :description_exp2, :company3, :position3, :description_exp3, :skills, :languages, :databases, :frameworks, :operating_systems, :github
 
 def initialize(resume_params)
   puts resume_params
@@ -20,6 +20,11 @@ def initialize(resume_params)
   @portfolio_url = resume_params['portfolio_url']
   @educations = resume_params['educations']
   @experiences = resume_params['experiences']
+  @languages = resume_params['skills']['languages']
+  @databases = resume_params['skills']['databases']
+  @frameworks = resume_params['skills']['frameworks']
+  @operating_systems = resume_params['skills']['operating_systems']
+  @github = resume_params['github']
 end
 
 
@@ -82,7 +87,16 @@ def dynamoid_dump
           "description_exp": @description_exp
         }
       ],
-      "portfolio_url": @portfolio_url
+      "portfolio_url": @portfolio_url,
+      "github": @github,
+      "skills" => {
+        "languages": @languages,
+        "databases": @databases,
+        "frameworks": @frameworks,
+        "operating_systems": @operating_systems
+        }
+
+
 
 
   }
