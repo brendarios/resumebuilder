@@ -59,15 +59,6 @@ class ResumesController < ApplicationController
     @resume.resume_contents.description_edu = params[:resume][:description_edu]
     @resume.resume_contents.school_location = params[:resume][:school_location]
 
-    @resume.resume_contents.school2 = params[:resume][:school2]
-    @resume.resume_contents.degree_major2 = params[:resume][:degree_major2]
-    @resume.resume_contents.description_edu2 = params[:resume][:description_edu2]
-    @resume.resume_contents.school_location2 = params[:resume][:school_location2]
-
-    @resume.resume_contents.school3 = params[:resume][:school3]
-    @resume.resume_contents.degree_major3 = params[:resume][:degree_major3]
-    @resume.resume_contents.description_edu3 = params[:resume][:description_edu3]
-    @resume.resume_contents.school_location3 = params[:resume][:school_location3]
 
     @resume.save
 

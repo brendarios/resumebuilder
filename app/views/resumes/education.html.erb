@@ -21,22 +21,22 @@
   <div>
     <div class="field">
       <%= form.label :school %>
-      <%= form.text_field 'school', :value => (@resume.id ? @resume.resume_contents.school : " ") %>
+      <%= form.text_field 'school', :value => (@resume.id ? @resume.resume_contents.educations[0]['school'] : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :degree_major %>
-      <%= form.text_field 'degree_major', :value => (@resume.id ? @resume.resume_contents.degree_major : " ") %>
+      <%= form.text_field 'degree_major', :value => (@resume.id ? @resume.resume_contents.educations[0]['degree_major'] : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :description_edu %>
-      <%= form.text_field 'description_edu', :value => (@resume.id ? @resume.resume_contents.description_edu : " ") %>
+      <%= form.text_field 'description_edu', :value => (@resume.id ? @resume.resume_contents.educations[0]['description_edu'] : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :school_location %>
-      <%= form.text_field 'school_location', :value => (@resume.id ? @resume.resume_contents.school_location : " ") %>
+      <%= form.text_field 'school_location', :value => (@resume.id ? @resume.resume_contents.educations[0]['school_location'] : " ") %>
     </div>
 
     <div>
