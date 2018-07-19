@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :resumes
     root 'home#index'
 
-  
+
   get '/resumes/:id', to: 'resumes#show_pdf', as: 'resume_pdf'
 
   get '/build-resume', to: 'resumes#sections', as: 'sections'
@@ -38,6 +38,10 @@ Rails.application.routes.draw do
   get '/build-resume/hobbies', to: 'resumes#hobbies'
 
   patch '/build-resume/update_hobbies', to: 'resumes#update_hobbies'
+
+  get '/build-resume/skills', to: 'resumes#skills'
+
+  patch '/build-resume/update_skills', to: 'resumes#update_skills'
 
   get '/build-resume/others', to: 'resumes#others'
 
