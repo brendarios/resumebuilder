@@ -19,7 +19,10 @@ Rails.application.routes.draw do
 
   post '/build-resume/contact_details', to: 'resumes#contact_details'
 
+  post '/build-resume/update_contact_details', to: 'resumes#update_contact_details'
+
   patch '/build-resume/update_contact_details', to: 'resumes#update_contact_details'
+
 
   get '/build-resume/summary', to: 'resumes#summary'
 

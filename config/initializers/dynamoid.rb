@@ -1,4 +1,5 @@
 require 'dynamoid'
+
   Dynamoid.configure do |config|
     config.namespace = nil # To namespace tables created by Dynamoid from other tables you might have. Set to nil to avoid namespacing.
     config.region = ENV['AWS_REGION'] || 'us-west-2'
