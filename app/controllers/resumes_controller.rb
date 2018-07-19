@@ -4,6 +4,17 @@ class ResumesController < ApplicationController
   before_action :set_resume , only:[:contact_details, :update_contact_details, :summary, :update_summary,
   :education, :update_education, :experience, :update_experience, :hobbies, :update_hobbies, :others, :update_others, :skills, :update_skills]
 
+  layout :resolve_layout
+
+
+  def resolve_layout
+    case action_name
+    when "show"
+      "pdf"
+    else
+      "application"
+    end
+  end
 
   def sections
 

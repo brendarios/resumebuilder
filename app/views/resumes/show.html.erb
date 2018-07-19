@@ -67,9 +67,8 @@
           <h2>EDUCATION</h2>
           <div class="content">
 						<h3><%=@resume.resume_contents.start_month_edu%> <%=@resume.resume_contents.start_year_edu%>-<h3><%=@resume.resume_contents.end_month_edu%> <%=@resume.resume_contents.end_year_edu%>
-            <p><%@resume.resume_contents.education do |education|%><br />
-							<%= education.school%>
-							<%end%>
+            <p><%=@resume.resume_contents.educations[0]['school']%><br />
+
               <em><%=@resume.resume_contents.degree_major%></em></p>
           </div>
           <!-- <div class="content">
