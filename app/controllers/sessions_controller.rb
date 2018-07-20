@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
       begin
         user = User.get_user(auth_hash)
-      rescue ResourceNotFoundException
+      rescue 
         user = User.new
         user.uid = auth_hash['uid']
         user.save
