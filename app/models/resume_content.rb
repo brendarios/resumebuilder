@@ -20,14 +20,14 @@ def initialize(resume_params)
   @portfolio_url = resume_params['portfolio_url']
   @educations = resume_params['educations']
   @experiences = resume_params['experiences']
-  @languages = resume_params['skills']['languages']
-  @databases = resume_params['skills']['databases']
-  @frameworks = resume_params['skills']['frameworks']
-  @operating_systems = resume_params['skills']['operating_systems']
-  @github = resume_params['github']
+  # @languages = resume_params['skills']['languages']
+  # @databases = resume_params['skills']['databases']
+  # @frameworks = resume_params['skills']['frameworks']
+  # @operating_systems = resume_params['skills']['operating_systems']
+  # @github = resume_params['github']
 end
 
-# def initialize 
+# def initialize
 # end
 
 
