@@ -38,11 +38,11 @@ class ResumesController < ApplicationController
 
     end
 
-    # def set_anonymous_resume_id
-    #   if !session[:uid] && !session[:resume_id]
-    #     session[:resume_id] = @resume.id
-    #   end
-    # end
+    def set_anonymous_resume_id
+      if !session[:uid] && !session[:resume_id]
+        session[:resume_id] = @resume.id
+      end
+    end
 
     def update_contact_details
 
@@ -129,6 +129,16 @@ class ResumesController < ApplicationController
       @resume.resume_contents.position = params[:resume][:position]
       @resume.resume_contents.description_exp = params[:resume][:description_exp]
 
+      @resume.resume_contents.company2 = params[:resume][:company2]
+      @resume.resume_contents.company_location2 = params[:resume][:company_location2]
+      @resume.resume_contents.position2 = params[:resume][:position2]
+      @resume.resume_contents.description_exp2 = params[:resume][:description_exp2]
+
+      @resume.resume_contents.company3 = params[:resume][:company3]
+      @resume.resume_contents.company_location3 = params[:resume][:company_location3]
+      @resume.resume_contents.position3 = params[:resume][:position3]
+      @resume.resume_contents.description_exp3 = params[:resume][:description_exp3]
+
       @resume.save
 
       redirect_to :sections
@@ -179,6 +189,8 @@ class ResumesController < ApplicationController
     def update_others
 
       @resume.resume_contents.portfolio_url = params[:resume][:portfolio_url]
+      @resume.resume_contents.github = params[:resume][:github]
+      @resume.resume_contents.hobbies = params[:resume][:hobbies]
       @resume.save
 
       redirect_to :sections
@@ -239,8 +251,10 @@ class ResumesController < ApplicationController
 
     def resume_params
 
-      resume = params.require(:resume).permit(:id, :user_uid, :github, { contact_details: {} }, :summary, :hobbies, { skills: {} }, experiences: [:company, :position, :description_exp, :company_location], educations: [:school, :degree_major, :description_edu, :school_location, :school2, :school3,
-        :degree_major2, :degree_major3,:school_location2, :school_location3, :description_edu2,:description_edu3, :start_month_edu, :start_year_edu, :start_month_edu2, :start_year_edu2, :start_month_edu3, :start_year_edu3, :end_month_edu, :end_year_edu,:end_month_edu2, :end_year_edu2,:end_month_edu3,
-        :end_year_edu3, ] )
+      resume = params.require(:resume).permit(:id, :user_uid, :github, { contact_details: {} }, :summary, :hobbies, :languages, :frameworks, :operating_systems, :databases,
+        experiences: [:company, :position, :description_exp, :company_location, :company2, :position2, :description_exp2, :company_location2, :company3, :position3, :description_exp3, :company_location3, ],
+        educations: [:school, :degree_major, :description_edu, :school_location, :school2, :school3,:degree_major2, :degree_major3,:school_location2, :school_location3,
+        :description_edu2,:description_edu3, :start_month_edu, :start_year_edu, :start_month_edu2, :start_year_edu2,:start_month_edu3, :start_year_edu3, :end_month_edu, :end_year_edu,:end_month_edu2,
+        :end_year_edu2,:end_month_edu3, :end_year_edu3, ] )
       end
     end

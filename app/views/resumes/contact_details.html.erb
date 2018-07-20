@@ -1,5 +1,8 @@
 <h1 class ="titles">Contact Details</h1>
 
+<div class="tips">
+  <p>Tips: Here is recommended to do a short summary including to impact and keywords</p>
+</div>
 
 <%= form_with(model: @resume, local: true, url: build_resume_update_contact_details_path) do |form| %>
 <% if @resume.errors.any? %>
@@ -14,9 +17,6 @@
 </div>
 <% end %>
 
-<div class="tips">
-  <p>Tips: Here is recommended to do a short summary including to impact and keywords</p>
-</div>
 
 <div class ="contact-details">
 
@@ -54,13 +54,11 @@
     <%= form.submit %>
   </div>
 
-<% end %>
+  <% end %>
 
 
-<%= button_to 'Back', sections_path, :class => "button", :method => "get" %>
+  <%= button_to 'Back', sections_path, :class => "button", :method => "get" %>
 
 
 
-<%= button_to 'Next: Summary', build_resume_summary_path, :class => "button", :method => "get" %>
-
-</div>
+  <%= button_to 'Next: Summary', build_resume_summary_path, :class => "button", :method => "get" %>

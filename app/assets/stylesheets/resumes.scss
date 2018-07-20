@@ -72,6 +72,18 @@ label {
 .educations .field {
   width: 300px
 }
+
+.experiences {
+  display: flex;
+  flex-direction: row;
+  flex-flow:wrap;
+
+  text-align: center;
+  line-height: 3.0;
+  font-size: 10pt;
+  margin-left: 20%;
+
+}
 .input .button {
   color:red
 }

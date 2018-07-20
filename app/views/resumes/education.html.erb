@@ -1,4 +1,4 @@
-<h1 class ="titles">Education</h1>
+<h1>Education</h1>
 
 
 <%= form_with(model: @resume, local: true, url: build_resume_update_education_path) do |form| %>
@@ -14,11 +14,9 @@
 </div>
 <% end %>
 
-<div class="tips">
-  <p>Tips: Here is recommended to do a short summary including to impact and keywords</p>
-</div>
 
-<div class ="educations">
+
+<div class ="contact-details">
 
   <div>
     <div class="field">
@@ -41,9 +39,22 @@
       <%= form.text_field 'school_location', :value => (@resume.id ? @resume.resume_contents.educations[0]['school_location'] : " ") %>
     </div>
 
-    <div class="field">
-      <%= form.label :start_month_edu %>
-      <%= form.text_field 'start_month_edu', :value => (@resume.id ? @resume.resume_contents.educations[0]['start_month_edu'] : " ") %>
+    <div>
+      <select name="Month">
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+
+      </select>
     </div>
 
   </div>
@@ -119,16 +130,12 @@
 <script>
   var form2 = false;
   var form3 = false;
-
   if ($('#education_form2').css('display') != 'none') {
     form2 = true
   }
-
   if ($('#education_form3').css('display') != 'none') {
     form3 = true
   }
-
-
   function show_education_form() {
     if (!form2) {
       $('#education_form2').show();
@@ -140,5 +147,4 @@
       $('#add_education').prop('disabled', true); 
     }
   }
-
 </script>

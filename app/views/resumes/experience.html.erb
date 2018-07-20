@@ -1,4 +1,4 @@
-<h1>Experience</h1>
+<h1 class="titles">Experience</h1>
 
 
 <%= form_with(model: @resume, local: true, url: build_resume_update_experience_path) do |form| %>
@@ -16,25 +16,29 @@
 
 
 
-<div class ="contact-details">
+<div class ="experiences">
 
 
   <div class="field">
     <%= form.label :company %>
-    <%= form.text_field 'company', :value => (@resume.id ? @resume.resume_contents.company : " ") %>
+    <%= form.text_field 'company', :value => (@resume.id ? @resume.resume_contents.experiences[0]['company2'] : " ") %>
   </div>
 
   <div class="field">
     <%= form.label :position %>
-    <%= form.text_field 'position', :value => (@resume.id ? @resume.resume_contents.position : " ") %>
+    <%= form.text_field 'position', :value => (@resume.id ? @resume.resume_contents.experiences[0]['position'] : " ") %>
   </div>
 
   <div class="field">
     <%= form.label :description_exp %>
-    <%= form.text_field 'description_exp', :value => (@resume.id ? @resume.resume_contents.description_exp : " ") %>
+    <%= form.text_field 'description_exp', :value => (@resume.id ? @resume.resume_contents.experiences[0]['description_exp'] : " ") %>
   </div>
 
-</div>
+  <div class="field">
+    <%= form.label :company_location %>
+    <%= form.text_field 'company_location', :value => (@resume.id ? @resume.resume_contents.experiences[0]['company_location'] : " ") %>
+  </div>
+
 
 
 <div class="actions">
@@ -45,9 +49,14 @@
 <% end %>
 
 <div class ="button-area">
-<%= button_to 'Back', build_resume_education_path, :class => "button", :method => "get" %>
-<div>
 
-  <div class ="button-area">
+  <button id="add_experience" class ="button" type="button" name="button" onclick="show_experience_form();">Add another experience</button>
+</div>
+
+<div class ="button-area">
+  <%= button_to 'Back', build_resume_education_path, :class => "button", :method => "get" %>
+</div>
+
+<div class ="button-area">
   <%= button_to 'Next: Skills', build_resume_skills_path, :class => "button", :method => "get" %>
-  <div>
+</div>
