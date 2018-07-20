@@ -59,73 +59,97 @@
 
   </div>
 
-  <div>
+  <% @education2_data = (@resume.id ? @resume.resume_contents.educations[1]['school2'] : nil) %>
+  <div id="education_form2" style="display: <%= @education2_data.nil? ? 'none' : true %>">
+
     <div class="field">
       <%= form.label :school2 %>
-      <%= form.text_field 'school2', :value => (@resume.id ? @resume.resume_contents.school2 : " ") %>
+      <%= form.text_field 'school2', :value => (@resume.id ? @resume.resume_contents.educations[1]['school2'] : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :degree_major2 %>
-      <%= form.text_field 'degree_major2', :value => (@resume.id ? @resume.resume_contents.degree_major2 : " ") %>
+      <%= form.text_field 'degree_major2', :value => (@resume.id ? @resume.resume_contents.educations[1]['degree_major2'] : " ")%>
     </div>
 
     <div class="field">
       <%= form.label :description_edu2 %>
-      <%= form.text_field 'description_edu2', :value => (@resume.id ? @resume.resume_contents.description_edu2 : " ") %>
+      <%= form.text_field 'description_edu2', :value => (@resume.id ? @resume.resume_contents.educations[1]['description_edu2'] : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :school_location2 %>
-      <%= form.text_field 'school_location2', :value => (@resume.id ? @resume.resume_contents.school_location2 : " ") %>
+      <%= form.text_field 'school_location2', :value => (@resume.id ? @resume.resume_contents.educations[1]['school_location2'] : " ")%>
     </div>
-
   </div>
-
-  <div>
+  <% @education3_data = (@resume.id ? @resume.resume_contents.educations[2]['school3'] : nil) %>
+  <div id="education_form3" style="display: <%= @education3_data.nil? ? 'none' : true %>">
     <div class="field">
       <%= form.label :school3 %>
-      <%= form.text_field 'school3', :value => (@resume.id ? @resume.resume_contents.school3 : " ") %>
+      <%= form.text_field 'school3', :value => (@resume.id ? @resume.resume_contents.educations[2]['school3'] : " ") %>
     </div>
 
     <div class="field">
       <%= form.label :degree_major3 %>
-      <%= form.text_field 'degree_major3', :value => (@resume.id ? @resume.resume_contents.degree_major3 : " ") %>
+      <%= form.text_field 'degree_major3', :value => (@resume.id ? @resume.resume_contents.educations[2]['degree_major3'] : " " )%>
     </div>
 
     <div class="field">
       <%= form.label :description_edu3 %>
-      <%= form.text_field 'description_edu3', :value => (@resume.id ? @resume.resume_contents.description_edu3 : " ") %>
+      <%= form.text_field 'description_edu3', :value => (@resume.id ? @resume.resume_contents.educations[2]['description_edu3'] : " ")%>
     </div>
 
     <div class="field">
       <%= form.label :school_location3 %>
-      <%= form.text_field 'school_location3', :value => (@resume.id ? @resume.resume_contents.school_location3 : " ") %>
+      <%= form.text_field 'school_location3', :value => (@resume.id ? @resume.resume_contents.educations[2]['school_location3'] : " ") %>
     </div>
 
   </div>
 
 
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 
 
-</div>
+  <% end %>
+
+  <div class ="button-area">
+    <!-- <%= button_to 'Add another education', build_resume_education_path, :class => "button", :method => "post" %> -->
+    <button id="add_education" class ="button" type="button" name="button" onclick="show_education_form();">Add another education</button>
+    <div>
+
+      <div class ="button-area">
+        <%= button_to 'Back', build_resume_summary_path, :class => "button", :method => "get" %>
+        <div>
+
+          <div class ="button-area">
+            <%= button_to 'Next: Experience',build_resume_experience_path, :class => "button", :method => "get" %>
+            <div>
+
+<script>
+  var form2 = false;
+  var form3 = false;
+
+  if ($('#education_form2').css('display') != 'none') {
+    form2 = true
+  }
+
+  if ($('#education_form3').css('display') != 'none') {
+    form3 = true
+  }
 
 
-<div class="actions">
-  <%= form.submit %>
-</div>
+  function show_education_form() {
+    if (!form2) {
+      $('#education_form2').show();
+      form2 = true;
+    }
+    else if (form2 && !form3) {
+      $('#education_form3').show();
+      form3 = true;
+      $('#add_education').prop('disabled', true); 
+    }
+  }
 
-
-<% end %>
-
-<div class ="button-area">
-  <%= button_to 'Add another education', build_resume_education_path, :class => "button", :method => "post" %>
-  <div>
-
-    <div class ="button-area">
-      <%= button_to 'Back', build_resume_summary_path, :class => "button", :method => "get" %>
-      <div>
-
-        <div class ="button-area">
-          <%= button_to 'Next: Experience',build_resume_experience_path, :class => "button", :method => "get" %>
-          <div>
+</script>

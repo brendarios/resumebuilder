@@ -94,6 +94,25 @@
     <%= form.text_field "experiences[description_exp]" %>
   </div>
 
+  <div class="field">
+    <%= form.label :languages %>
+    <%= form.text_field 'languages', :value => (@resume.id ? @resume.resume_contents.languages : " ") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :databases %>
+    <%= form.text_field 'databases', :value => (@resume.id ? @resume.resume_contents.databases : " ") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :frameworks %>
+    <%= form.text_field 'frameworks', :value => (@resume.id ? @resume.resume_contents.frameworks : " ") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :operating_systems %>
+    <%= form.text_field 'operating_systems', :value => (@resume.id ? @resume.resume_contents.operating_systems : " ") %>
+  </div>
 
 
 

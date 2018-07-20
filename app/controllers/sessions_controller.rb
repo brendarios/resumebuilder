@@ -1,11 +1,18 @@
 class SessionsController < ApplicationController
 
   def create
+    user = nil
     auth_hash = request.env['omniauth.auth']
 
     if auth_hash['uid']
 
-      user = User.get_user(auth_hash)
+      begin
+        user = User.get_user(auth_hash)
+      rescue ResourceNotFoundException
+        user = User.new
+        user.uid = auth_hash['uid']
+        user.save
+      end
 
       if user.nil?
 

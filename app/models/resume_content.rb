@@ -27,6 +27,8 @@ def initialize(resume_params)
   @github = resume_params['github']
 end
 
+# def initialize 
+# end
 
 
 def dynamoid_dump
@@ -43,6 +45,14 @@ def dynamoid_dump
       },
       "summary": @summary,
       "hobbies": @hobbies,
+
+      "skills" => {
+        "languages": @languages,
+        "databases": @databases,
+        "frameworks": @frameworks,
+        "operating_systems": @operating_systems
+      },
+
       "educations" => [
             {
           "school": @school,
@@ -89,12 +99,7 @@ def dynamoid_dump
       ],
       "portfolio_url": @portfolio_url,
       "github": @github,
-      "skills" => {
-        "languages": @languages,
-        "databases": @databases,
-        "frameworks": @frameworks,
-        "operating_systems": @operating_systems
-        }
+
 
 
 
