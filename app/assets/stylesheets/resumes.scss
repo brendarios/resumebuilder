@@ -2,18 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.field {
-  width: 60%;
+.titles {
+  text-align: center;
+  width: 400px;
+  font-size: 35px;
+  line-height: 0;
+  padding-top: 5%;
+  padding-bottom: 3%;
+  margin-left: 35%
 }
 
+
+.field {
+  width: 30%;
+  padding-right: 5%;
+  padding-bottom: 5%
+}
+
+label {
+  width: 80px
+}
 .field-address {
   width: 100%;
 }
 
 
 .summary-area {
-  rows: 10;
+  background-color: white;
+  width: 700px;
+  height: 200px
+}
+
+.tips {
+  display: block;
+  background-color: #f2f2f2;
+  color: blue;
+  margin-right: 25%;
+  padding-bottom: 10%;
+  margin-left: 25%
+}
+
+.tips p {
+  padding-top: 3%
 }
 
 .contact-details {
@@ -28,18 +58,38 @@
   margin-left: 20%;
 
 }
+.educations {
+  display: flex;
+  flex-direction: row;
+  flex-flow:wrap;
 
+  text-align: center;
+  line-height: 3.0;
+  font-size: 10pt;
+  margin-left: 20%;
+}
+
+.educations .field {
+  width: 300px
+}
+.input .button {
+  color:red
+}
 
 .sections {
   text-align: center;
-  padding-top: 15%;
+  padding-top: 5%;
   font-size: 20pt;
+
 }
 
 .mybutton {
   text-align: center;
 }
 
+.button-area {
+  float: none
+}
 .paragraph {
   margin-top: 1%;
 }
@@ -69,6 +119,15 @@ h2 {
   font-weight:bold;
 }
 
+.sections {
+  line-height: 130%
+}
+.field-summary {
+  width: 80%;
+  height: 10rem
+}
+
+
 
 .thankyou {
   text-align: center;
@@ -97,6 +156,14 @@ h2 {
 
 }
 
+.button{
+  float: none;
+  margin: 0 auto;
+  vertical-align: middle;
+  width: 200px;
+  height: 70px;
+
+}
 .thankyou .recommendation {
   line-height: 170%;
   padding-top: 10%

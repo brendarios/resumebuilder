@@ -1,4 +1,4 @@
-<h1>Contact Details</h1>
+<h1 class ="titles">Contact Details</h1>
 
 
 <%= form_with(model: @resume, local: true, url: build_resume_update_contact_details_path) do |form| %>
@@ -14,10 +14,11 @@
 </div>
 <% end %>
 
-
+<div class="tips">
+  <p>Tips: Here is recommended to do a short summary including to impact and keywords</p>
+</div>
 
 <div class ="contact-details">
-
 
   <div class="field">
     <%= form.label :first_name %>
@@ -49,7 +50,7 @@
     <%= form.text_field 'linkedin', :value => (@resume.id ? @resume.resume_contents.linkedin : " ") %>
   </div>
 
-  <div class="mybutton">
+  <div class="button">
     <%= form.submit %>
   </div>
 

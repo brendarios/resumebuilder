@@ -1,4 +1,4 @@
-<h1>Summary</h1>
+<h1 class="titles">Summary</h1>
 
 
 <%= form_with(model: @resume, local: true, url: build_resume_update_summary_path) do |form| %>
@@ -14,14 +14,16 @@
 </div>
 <% end %>
 
-
+<div class="tips">
+  <p>Tips: Here is recommended to do a short summary including to impact and keywords</p>
+</div>
 
 <div class ="summary">
 
 
   <div class="field-summary">
-    <%= form.label :summary %>
-    <%= form.text_field 'summary', :value => (@resume.id ? @resume.resume_contents.summary : " "), :class => "summary-area" %>
+
+    <%= form.text_area 'summary', :value => (@resume.id ? @resume.resume_contents.summary : " "), :class => "summary-area" %>
   </div>
 
 
@@ -37,9 +39,12 @@
 <% end %>
 
 <div class ="button-area">
+<div>
 <%= button_to 'Back', build_resume_contact_details_path, :class => "button", :method => "get" %>
 <div>
 
-<div class ="button-area">
+<div>
 <%= button_to 'Next: Education', build_resume_education_path, :class => "button", :method => "get" %>
 <div>
+
+</div>
