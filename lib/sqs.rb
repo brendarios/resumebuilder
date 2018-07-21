@@ -12,7 +12,7 @@ def send_message
     # Create a message with three custom attributes: Title, Author, and WeeksOn.
     send_message_result = sqs.send_message({
       queue_url: queue_url,
-      message_body: {"Converting the resume template into a pdf fil"},
+      message_body: "Converting the resume template into a pdf file.",
       message_attributes: {
         "UserEmail" => {
           string_value: "tadeo.perez@gmail.com",
