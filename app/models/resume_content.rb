@@ -9,24 +9,26 @@ class ResumeContent
 
   def initialize(resume_params)
     puts resume_params
-    @first_name = resume_params['contact_details']['first_name']
-    @last_name = resume_params['contact_details']['last_name']
-    @email = resume_params['contact_details']['email']
-    @phone = resume_params['contact_details']['phone']
-    @address = resume_params['contact_details']['address']
-    @linkedin = resume_params['contact_details']['linkedin']
-    @summary = resume_params['summary']
-    @hobbies = resume_params['hobbies']
-    @portfolio_url = resume_params['portfolio_url']
-    @educations = resume_params['educations']
-    @experiences = resume_params['experiences']
-    @languages = resume_params['languages']
-    @databases = resume_params['databases']
-    @frameworks = resume_params['frameworks']
-    @operating_systems = resume_params['operating_systems']
-    @github = resume_params['github']
+    unless resume_params.blank?
+      @first_name = resume_params['contact_details']['first_name']
+      @last_name = resume_params['contact_details']['last_name']
+      @email = resume_params['contact_details']['email']
+      @phone = resume_params['contact_details']['phone']
+      @address = resume_params['contact_details']['address']
+      @linkedin = resume_params['contact_details']['linkedin']
+      @summary = resume_params['summary']
+      @hobbies = resume_params['hobbies']
+      @portfolio_url = resume_params['portfolio_url']
+      @educations = resume_params['educations']
+      @experiences = resume_params['experiences']
+      @languages = resume_params['languages']
+      @databases = resume_params['databases']
+      @frameworks = resume_params['frameworks']
+      @operating_systems = resume_params['operating_systems']
+      @github = resume_params['github']
+    end
   end
-  # 
+
   # def initialize
   # end
 
@@ -126,8 +128,11 @@ class ResumeContent
   end
 
   def self.dynamoid_load(serialized_str)
-
-    ResumeContent.new(JSON.parse(serialized_str))
+    if serialized_str.nil?
+      ResumeContent.new
+    else
+      ResumeContent.new(JSON.parse(serialized_str))
+    end
   end
 
 

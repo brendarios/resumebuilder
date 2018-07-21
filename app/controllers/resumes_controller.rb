@@ -35,7 +35,7 @@ class ResumesController < ApplicationController
     end
 
     def contact_details
-
+      # puts session[:resume_id]
     end
 
     def set_anonymous_resume_id
