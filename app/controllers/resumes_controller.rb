@@ -151,7 +151,8 @@ class ResumesController < ApplicationController
       # else
       #   @resume = Resume.find_by_id(params[:id])
       end
-      ResumeConverterJob.perform_later "{}"
+      send_message
+      # ResumeConverterJob.perform_later "{}"
     end
 
     def hobbies
