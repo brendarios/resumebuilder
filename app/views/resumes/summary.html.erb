@@ -1,6 +1,46 @@
 <h1 class="titles">Summary</h1>
 
 
+<button id="myBtn">Find Tips</button>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p class="tips-summary"> Unlike the old-fashioned resume objective, which tells an employer what you hope to gain from a job, a summary statement emphasizes your unique value and what you can offer a company. Think of it as your sales pitch. This statement should be approximately four to six lines, and it should highlight the experience, achievements, and characteristics that make you uniquely qualified for a position.
+    </br></p> </br>
+
+    <p class="tips-summary"><strong>Try to answer the following questions:</strong> </br> - What excites you about your newly chosen career path? </br> - How did you get where you are?, and what gets you apart
+      from other candidates? </br>Remember to use <strong>keywords</strong> related to the job posting.
+    </p>
+  </div>
+
+</div>
+
+<script>
+
+let modal = document.getElementById('myModal');
+
+let btn = document.getElementById("myBtn");
+
+let span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+
 <%= form_with(model: @resume, local: true, url: build_resume_update_summary_path) do |form| %>
 <% if @resume.errors.any? %>
 <div id="error_explanation">
@@ -14,37 +54,28 @@
 </div>
 <% end %>
 
-<div class="tips">
-  <p>Tips: Here is recommended to do a short summary including to impact and keywords</p>
-</div>
+
 
 <div class ="summary">
-
-
   <div class="field-summary">
-
     <%= form.text_area 'summary', :value => (@resume.id ? @resume.resume_contents.summary : " "), :class => "summary-area" %>
   </div>
 
+  <div class="actions-summary">
+    <%= form.submit %>
+  </div>
 
+  <% end %>
 
 </div>
 
+<div class ="buttons">
+  <div>
+    <%= button_to 'Back', build_resume_contact_details_path, :class => "button", :method => "get" %>
+  </div>
 
-<div class="actions">
-  <%= form.submit %>
-</div>
-
-
-<% end %>
-
-<div class ="button-area">
-<div>
-<%= button_to 'Back', build_resume_contact_details_path, :class => "button", :method => "get" %>
-<div>
-
-<div>
-<%= button_to 'Next: Education', build_resume_education_path, :class => "button", :method => "get" %>
-<div>
+  <div>
+    <%= button_to 'Next: Education', build_resume_education_path, :class => "button", :method => "get" %>
+  </div>
 
 </div>

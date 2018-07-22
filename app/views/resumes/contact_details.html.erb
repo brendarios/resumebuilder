@@ -1,8 +1,52 @@
 <h1 class ="titles">Contact Details</h1>
 
-<div class="tips">
-  <p>Tips: Here is recommended to do a short summary including to impact and keywords</p>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Find Tips</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p class="tips"><strong>Name-</strong>If you go by a name other than your given name, you can use this in your resume. However, whatever name you choose, be consistent. It should be the name on all of your job applications.</br>
+    </br><strong>Mail Address-</strong>Use a permanent mailing address. If you are a student, you might include both your permanent address and your school address.If you're concerned about privacy, consider listing just the city and state. For example, your address might read: Tampa, Florida. </br>
+  </br><strong>Email-</strong> Use a personal email address, not your work email address. Avoid unprofessional email addresses, such as PartyTime@email.com</br>
+</br><strong>Phone-</strong>It is very important to have voicemail on your phone so that hiring managers can leave a message when you're not available. You don't want to miss any important calls.</br>
+</br><strong>LinkedIN-</strong>It's a good idea to include your LinkedIn URL on your resume. Prospective employers can visit LinkedIn to learn more about you and your skills and qualifications. They can also see endorsements and reviews from your colleagues, clients, and managers.<br>
+Customize your URL to make it more professional. This can be done on your profile under Edit public profile & URL section.
+</p>
 </div>
+
+</div>
+
+<script>
+// Get the modal
+let modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+let btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 <%= form_with(model: @resume, local: true, url: build_resume_update_contact_details_path) do |form| %>
 <% if @resume.errors.any? %>
@@ -50,15 +94,20 @@
     <%= form.text_field 'linkedin', :value => (@resume.id ? @resume.resume_contents.linkedin : " ") %>
   </div>
 
-  <div class="button">
+  <div class="button-contact-details">
     <%= form.submit %>
   </div>
 
   <% end %>
 
+</div>
 
-  <%= button_to 'Back', sections_path, :class => "button", :method => "get" %>
+  <div class="buttons">
+    <div>
+      <%= button_to 'Back', sections_path, :class => "button", :method => "get" %>
+    </div>
 
-
-
-  <%= button_to 'Next: Summary', build_resume_summary_path, :class => "button", :method => "get" %>
+    <div>
+      <%= button_to 'Next: Summary', build_resume_summary_path, :class => "button", :method => "get" %>
+    </div>
+  </div>

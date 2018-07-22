@@ -9,47 +9,97 @@
   line-height: 0;
   padding-top: 5%;
   padding-bottom: 3%;
-  margin-left: 35%
+  margin-left: 35%;
+  font-family: 'Walter Turncoat', cursive;
+  font-weight:bold;
 }
 
 
 .field {
   width: 30%;
   padding-right: 5%;
-  padding-bottom: 5%
+  padding-bottom: 5%;
 }
 
 label {
-  width: 80px
+  width: 80px;
+  color: #0000ff;
+  font-family: 'Walter Turncoat', cursive;
 }
 .field-address {
-  width: 100%;
+  width: 52%;
 }
 
+.contact-details .button-contact-details {
+  background-color:inherit;
+  margin-left: 28%;
+  border-radius: 10pt;
+}
 
+[type='submit'], [type='button'] {
+  appearance: none;
+  border-radius: 10pt;
+  background-color: #e67300;
+  // padding: 3%;
+  padding-left: 4%;
+  // padding-right: 10%;
+}
+
+.contact-details .button-contact-details [type='submit'], [type='button'] {
+  margin-left: 26%;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 10%;
+  padding-bottom: 10%
+}
+
+.actions-summary [type='submit'], [type='button'] {
+  margin-left: 26%;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+  padding-top: 1%;
+  padding-bottom: 1%
+
+}
+
+.buttons {
+  display: flex;
+  margin-left: 35%;
+  margin-bottom: 3%;
+  margin-top: 3%
+
+}
+.buttons .button {
+  padding-right: 10%;
+  border: none;
+  background-color: #004466;
+  color: #e6e6e6
+}
+.button-1 {
+  background-color: none;
+  text-align: center;
+  margin-left: 32%;
+
+}
+
+.button_to .button{
+  padding-right: 10%;
+  border: none;
+  background-color: #004466;
+  color: #e6e6e6;
+  padding-right: 10%;
+  height: 50px
+}
 .summary-area {
   background-color: white;
   width: 700px;
-  height: 200px
-}
-
-.tips {
-  display: block;
-  background-color: #f2f2f2;
-  color: blue;
-  margin-right: 25%;
-  padding-bottom: 10%;
-  margin-left: 25%
-}
-
-.tips p {
-  padding-top: 3%
+  height: 100px
 }
 
 .contact-details {
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-flow:wrap;
 
   text-align: center;
@@ -57,6 +107,10 @@ label {
   font-size: 10pt;
   margin-left: 20%;
 
+}
+
+.contact-details .field {
+  width: 300px
 }
 .educations {
   display: flex;
@@ -84,9 +138,6 @@ label {
   margin-left: 20%;
 
 }
-.input .button {
-  color:red
-}
 
 .sections {
   text-align: center;
@@ -95,9 +146,6 @@ label {
 
 }
 
-.mybutton {
-  text-align: center;
-}
 
 .button-area {
   float: none
@@ -108,7 +156,7 @@ label {
 
 .summary {
   font-size: 10pt;
-  margin-left: 10%;
+  margin-left: 25%;
   line-height: 1.6;
 }
 
@@ -135,7 +183,7 @@ h2 {
   line-height: 130%
 }
 .field-summary {
-  width: 80%;
+  width: 90%;
   height: 10rem
 }
 
@@ -168,14 +216,8 @@ h2 {
 
 }
 
-.button{
-  float: none;
-  margin: 0 auto;
-  vertical-align: middle;
-  width: 200px;
-  height: 70px;
 
-}
+
 .thankyou .recommendation {
   line-height: 170%;
   padding-top: 10%
@@ -199,7 +241,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-style: inherit;
   font-size: 100%;
   font-family: inherit;
-  vertical-align: baseline;
+  // vertical-align: baseline;
 }
 :focus {
   outline: 0;
@@ -806,100 +848,100 @@ big {
 
 /* CONTACT */
 
-fieldset, legend {
-  float:right;
-  width:500px;
-  padding:0;
-  margin:0;
-  margin-left:40px;
-}
+// fieldset, legend {
+//   float:right;
+//   width:500px;
+//   padding:0;
+//   margin:0;
+//   margin-left:40px;
+// }
+//
+// h1.warn {
+//   color:#1b4491;
+//   font-size:18px;
+//   margin-top:30px;
+//   padding:50px;
+//   text-align: center;
+// }
 
-h1.warn {
-  color:#1b4491;
-  font-size:18px;
-  margin-top:30px;
-  padding:50px;
-  text-align: center;
-}
+// #contactform {
+//   width:320px;
+//   height:370px;
+//   margin:0 auto;
+//   padding:50px;
+//   overflow: hidden;
+// }
+//
+// label {
+//   float:left;
+//   width:40px;
+//   height:28px;
+//   margin-bottom:10px;
+//   clear:both;
+//   color:#1b4491;
+// }
 
-#contactform {
-  width:320px;
-  height:370px;
-  margin:0 auto;
-  padding:50px;
-  overflow: hidden;
-}
+// input {
+//   width:228px;
+//   float:right;
+//   height:18px;
+//   margin-bottom:10px;
+//   border-top:1px solid #c8c8c8;
+//   border-left:1px solid #c8c8c8;
+//   border-right:1px solid #dadada;
+//   border-bottom:1px solid #f2f2f2;
+//   background-color: #e4e4e4;
+//   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+//   font-size: 13px;
+//   padding:5px;
+//   outline: none;
+// }
 
-label {
-  float:left;
-  width:40px;
-  height:28px;
-  margin-bottom:10px;
-  clear:both;
-  color:#1b4491;
-}
+// input:focus {
+//   background-color: #dddddd;
+//   border-top:1px solid #c8c8c8;
+//   border-left:1px solid #c8c8c8;
+//   border-right:1px solid #dadada;
+//   border-bottom:1px solid #f2f2f2;
+// }
 
-input {
-  width:228px;
-  float:right;
-  height:18px;
-  margin-bottom:10px;
-  border-top:1px solid #c8c8c8;
-  border-left:1px solid #c8c8c8;
-  border-right:1px solid #dadada;
-  border-bottom:1px solid #f2f2f2;
-  background-color: #e4e4e4;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  padding:5px;
-  outline: none;
-}
+// textarea {
+//   border-top:1px solid #c8c8c8;
+//   border-left:1px solid #c8c8c8;
+//   border-right:1px solid #dadada;
+//   border-bottom:1px solid #f2f2f2;
+//   background-color: #e4e4e4;
+//   width:228px;
+//   float:right;
+//   margin-bottom:10px;
+//   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+//   font-size: 13px;
+//   padding:5px;
+//   outline: none;
+// }
+//
+// textarea:focus {
+//   background-color: #dddddd;
+//   border-top:1px solid #c8c8c8;
+//   border-left:1px solid #c8c8c8;
+//   border-right:1px solid #dadada;
+//   border-bottom:1px solid #f2f2f2;
+// }
 
-input:focus {
-  background-color: #dddddd;
-  border-top:1px solid #c8c8c8;
-  border-left:1px solid #c8c8c8;
-  border-right:1px solid #dadada;
-  border-bottom:1px solid #f2f2f2;
-}
-
-textarea {
-  border-top:1px solid #c8c8c8;
-  border-left:1px solid #c8c8c8;
-  border-right:1px solid #dadada;
-  border-bottom:1px solid #f2f2f2;
-  background-color: #e4e4e4;
-  width:228px;
-  float:right;
-  margin-bottom:10px;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  padding:5px;
-  outline: none;
-}
-
-textarea:focus {
-  background-color: #dddddd;
-  border-top:1px solid #c8c8c8;
-  border-left:1px solid #c8c8c8;
-  border-right:1px solid #dadada;
-  border-bottom:1px solid #f2f2f2;
-}
-
-.submit-button {
-  background: transparent url(../images/submit.jpg) no-repeat 0 0;
-  display: block;
-  clear: both;
-  width:90px;
-  height: 33px;
-  border:none;
-  float:left;
-  margin-left: 80px;
-  text-indent: -9999px;
-  outline: 0;
-  cursor: pointer;
-  padding:0;
-}
+// .submit-button {
+//   background: transparent url(../images/submit.jpg) no-repeat 0 0;
+//   display: block;
+//   clear: both;
+//   width:90px;
+//   height: 33px;
+//   border:none;
+//   float:left;
+//   margin-left: 80px;
+//   text-indent: -9999px;
+//   outline: 0;
+//   cursor: pointer;
+//   padding:0;
+// }
 
 .submit-button:hover {
   background: transparent url(../images/submit.jpg) no-repeat 0 -33px;
@@ -917,4 +959,76 @@ label.error {
   font-weight: normal;
   margin-left:80px;
   width:238px;
+}
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 200%; /* Full height */
+    overflow:scroll; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 35%
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tips {
+  margin-right: 30%;
+  margin-left: 5%;
+  width: 60%;
+  font-size: 10pt
+}
+
+.tips-summary{
+  margin-right: 20%;
+  margin-left: 5%;
+  width: 70%;
+  font-size: 13pt;
+  padding-bottom: 2%
+}
+
+.tips p {
+  padding-top: 3%
+}
+#myBtn {
+  margin-left: 45%;
+  background-color:#d1e0e0;
+  font-size: 20pt;
+  padding: 1%;
+  border-radius: 10pt;
+  margin-bottom: 4%;
+  font-family: 'Walter Turncoat', cursive;
 }
