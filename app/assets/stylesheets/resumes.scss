@@ -14,7 +14,14 @@
   font-weight:bold;
 }
 
+.educations {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr
+}
 
+// [type='text'] {
+//   border: none
+// }
 .field {
   width: 30%;
   padding-right: 5%;
@@ -22,7 +29,7 @@
 }
 
 label {
-  width: 80px;
+  width: 120px;
   color: #0000ff;
   font-family: 'Walter Turncoat', cursive;
 }
@@ -59,9 +66,25 @@ label {
   padding-right: 1.5%;
   padding-top: 1%;
   padding-bottom: 1%
-
 }
 
+.actions-skills [type='submit'], [type='button'] {
+  margin-left: 45%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%
+}
+
+.button-build {
+  margin-top: 2%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  color: #004466
+
+}
 .buttons {
   display: flex;
   margin-left: 35%;
@@ -197,23 +220,19 @@ h2 {
   vertical-align: center;
   padding-left: 25%;
   font-size: 15pt;
-
-
-  background-color: red;
-
-  animation-name: example;
-  animation-duration: 4s;
 }
 
 @keyframes example {
-  0%   {background-color: red;}
-  25%  {background-color: yellow;}
-  50%  {background-color: blue;}
-  100% {background-color: green;}
+  0%   {color: #004466;}
+  25%  {color: orange;}
+  50%  {color: #004466;}
+  70%  {color: orange}
+  100% {color: #004466;}
 }
 .thankyou .emailsent {
-  padding-top: 10%
-
+  padding-top: 10%;
+  animation-name: example;
+  animation-duration: 20s;
 }
 
 
@@ -292,11 +311,15 @@ body {
 a, a:visited, a:active {
   color:#7b90b5;
   text-decoration: none;
+  padding-left: 1%;
+  padding-right: 1%;
+
 }
 
 a:hover {
-  color:#7b90b5;
-  text-decoration: underline;
+  color:white;
+  background: #336699;
+  text-decoration: none;
 }
 
 /* DOSSIER BACKGROUND */
@@ -1020,15 +1043,20 @@ label.error {
   padding-bottom: 2%
 }
 
+.tips-summary.questions {
+  font-style: italic
+}
+
 .tips p {
   padding-top: 3%
 }
 #myBtn {
-  margin-left: 45%;
+  margin-left: 40%;
   background-color:#d1e0e0;
   font-size: 20pt;
   padding: 1%;
   border-radius: 10pt;
   margin-bottom: 4%;
   font-family: 'Walter Turncoat', cursive;
+  cursor: pointer
 }

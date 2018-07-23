@@ -1,4 +1,45 @@
-<h1>Skills</h1>
+<h1 class="titles">Skills</h1>
+<button id="myBtn">Click here for Tips</button>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p class="tips-summary">
+
+      If you are new to the technology field and concerned about a lack of experience, consider offering free or
+      low-cost technical services to charitable organizations, friends, family or local businesses.
+      Doing so allows you to hone your craft and show related work or volunteer experience on your resume.
+    </br></p> </br>
+
+    <p class="tips-summary"><strong>Try to answer the following questions:</strong> </br> - What excites you about your newly chosen career path? </br> - How did you get where you are?, and what gets you apart
+      from other candidates? </br>Remember to use <strong>keywords</strong> related to the job posting.
+    </p>
+  </div>
+
+</div>
+
+<script>
+
+let modal = document.getElementById('myModal');
+
+let btn = document.getElementById("myBtn");
+
+let span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 
 <%= form_with(model: @resume, local: true, url: build_resume_update_skills_path) do |form| %>
@@ -16,9 +57,9 @@
 
 
 
+
+
 <div class ="contact-details">
-
-
   <div class="field">
     <%= form.label :languages %>
     <%= form.text_field 'languages', :value => (@resume.id ? @resume.resume_contents.languages : " ") %>
@@ -38,20 +79,20 @@
     <%= form.label :operating_systems %>
     <%= form.text_field 'operating_systems', :value => (@resume.id ? @resume.resume_contents.operating_systems : " ") %>
   </div>
-
-
-
-  <div class="mybutton">
+</div>
+  <div class="actions-skills">
     <%= form.submit %>
   </div>
 
-<% end %>
+  <% end %>
 
 
-<%= button_to 'Back', sections_path, :class => "button", :method => "get" %>
+<div class="buttons">
+  <div>
+    <%= button_to 'Back', sections_path, :class => "button", :method => "get" %>
+  </div>
 
-
-
-<%= button_to 'Next: Summary', build_resume_summary_path, :class => "button", :method => "get" %>
-
+  <div>
+    <%= button_to 'Next: Others', build_resume_others_path, :class => "button", :method => "get" %>
+  </div>
 </div>

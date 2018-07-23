@@ -1,5 +1,40 @@
-<h1>Others</h1>
+<h1 class="titles">Others</h1>
 
+<button id="myBtn">Click here for Tips</button>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p class="tips-summary">
+      If you are new to the technology field and concerned about a lack of experience, consider offering free or
+      low-cost technical services to charitable organizations, friends, family or local businesses.
+      Doing so allows you to hone your craft and show related work or volunteer experience on your resume.</p> 
+  </div>
+
+</div>
+
+<script>
+
+let modal = document.getElementById('myModal');
+
+let btn = document.getElementById("myBtn");
+
+let span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 <%= form_with(model: @resume, local: true, url: build_resume_update_others_path) do |form| %>
 <% if @resume.errors.any? %>
@@ -16,7 +51,7 @@
 
 
 
-<div class ="summary">
+<div class ="contact-details">
 
 
   <div class="field">
@@ -35,21 +70,24 @@
   </div>
 
 
-
 </div>
+  <div class="actions-skills">
+    <%= form.submit %>
+  </div>
 
 
-<div class="actions">
-  <%= form.submit %>
-</div>
+  <% end %>
 
+<div class ="buttons">
+  <div>
+    <%= button_to 'Back', build_resume_skills_path, :class => "button", :method => "get" %>
+  </div>
 
-<% end %>
+  <div>
+    <%= link_to 'Preview Resume', @resume %>
+  </div>
 
-<div class ="button-area">
-<%= button_to 'Back', build_resume_skills_path, :class => "button", :method => "get" %>
-</div>
-
-<div class ="button-area">
-<%= link_to 'Preview Resume', @resume %>
+  <div>
+    <%= button_to 'Next: Build Resume', sections_path, :class => "button", :method => "get" %>
+  </div>
 </div>
