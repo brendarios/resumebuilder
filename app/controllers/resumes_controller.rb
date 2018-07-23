@@ -34,6 +34,11 @@ class ResumesController < ApplicationController
       end
     end
 
+
+    def job
+      puts "hello world"
+    end
+    
     def contact_details
       # puts session[:resume_id]
     end
@@ -102,17 +107,29 @@ class ResumesController < ApplicationController
       @resume.resume_contents.degree_major = params[:resume][:degree_major]
       @resume.resume_contents.description_edu = params[:resume][:description_edu]
       @resume.resume_contents.school_location = params[:resume][:school_location]
+      @resume.resume_contents.start_month_edu = params[:resume][:start_month_edu]
+      @resume.resume_contents.end_month_edu = params[:resume][:end_month_edu]
+      @resume.resume_contents.start_year_edu = params[:resume][:start_year_edu]
+      @resume.resume_contents.end_year_edu = params[:resume][:end_year_edu]
 
       @resume.resume_contents.school2 = params[:resume][:school2]
       @resume.resume_contents.degree_major2 = params[:resume][:degree_major2]
       @resume.resume_contents.description_edu2 = params[:resume][:description_edu2]
       @resume.resume_contents.school_location2 = params[:resume][:school_location2]
+      @resume.resume_contents.start_month_edu2 = params[:resume][:start_month_edu2]
+      @resume.resume_contents.end_month_edu2 = params[:resume][:end_month_edu2]
+      @resume.resume_contents.start_year_edu2 = params[:resume][:start_year_edu2]
+      @resume.resume_contents.end_year_edu2 = params[:resume][:end_year_edu2]
 
 
       @resume.resume_contents.school3 = params[:resume][:school3]
       @resume.resume_contents.degree_major3 = params[:resume][:degree_major3]
       @resume.resume_contents.description_edu3 = params[:resume][:description_edu3]
       @resume.resume_contents.school_location3 = params[:resume][:school_location3]
+      @resume.resume_contents.start_month_edu3 = params[:resume][:start_month_edu3]
+      @resume.resume_contents.end_month_edu3 = params[:resume][:end_month_edu3]
+      @resume.resume_contents.start_year_edu3 = params[:resume][:start_year_edu3]
+      @resume.resume_contents.end_year_edu3 = params[:resume][:end_year_edu3]
       @resume.save
 
       redirect_to :sections

@@ -59,6 +59,9 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
+  post '/', to: 'resumes#job'
+
+
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
 
