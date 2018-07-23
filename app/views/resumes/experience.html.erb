@@ -16,7 +16,7 @@
 
 
 
-<div class ="experiences">
+<div class ="contact-details">
 
 
   <div class="field">
@@ -39,24 +39,25 @@
     <%= form.text_field 'company_location', :value => (@resume.id ? @resume.resume_contents.experiences[0]['company_location'] : " ") %>
   </div>
 
-
-
-<div class="actions">
+</div>
+<div class="actions-skills">
   <%= form.submit %>
 </div>
 
 
 <% end %>
 
-<div class ="button-area">
+<div class="buttons">
+  <div>
 
-  <button id="add_experience" class ="button" type="button" name="button" onclick="show_experience_form();">Add another experience</button>
-</div>
+    <button id="add_experience" class ="button" type="button" name="button" onclick="show_experience_form();">Add another experience</button>
+  </div>
 
-<div class ="button-area">
-  <%= button_to 'Back', build_resume_education_path, :class => "button", :method => "get" %>
-</div>
+  <div>
+    <%= button_to 'Back', build_resume_education_path, :class => "button", :method => "get" %>
+  </div>
 
-<div class ="button-area">
-  <%= button_to 'Next: Skills', build_resume_skills_path, :class => "button", :method => "get" %>
+  <div>
+    <%= button_to 'Next: Skills', build_resume_skills_path, :class => "button", :method => "get" %>
+  </div>
 </div>

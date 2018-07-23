@@ -1,4 +1,42 @@
-<h1>Education</h1>
+<h1 class="titles">Education</h1>
+
+<button id="myBtn">Click here for Tips</button>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p class="tips-summary"> Unlike the old-fashioned resume objective, which tells an employer what you hope to gain from a job, a summary statement emphasizes your unique value and what you can offer a company. Think of it as your sales pitch. This statement should be approximately four to six lines, and it should highlight the experience, achievements, and characteristics that make you uniquely qualified for a position.
+    </br></p> </br>
+
+    <p class="tips-summary"><strong>Try to answer the following questions:</strong> </br> - What excites you about your newly chosen career path? </br> - How did you get where you are?, and what gets you apart
+      from other candidates? </br>Remember to use <strong>keywords</strong> related to the job posting.
+    </p>
+  </div>
+
+</div>
+
+<script>
+
+let modal = document.getElementById('myModal');
+
+let btn = document.getElementById("myBtn");
+
+let span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 
 <%= form_with(model: @resume, local: true, url: build_resume_update_education_path) do |form| %>
