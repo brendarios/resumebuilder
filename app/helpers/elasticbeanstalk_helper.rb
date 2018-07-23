@@ -1,0 +1,2 @@
+module ElasticbeanstalkHelper
+end

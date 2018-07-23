@@ -59,7 +59,7 @@ Rails.application.routes.draw do
 
   post '/', to: 'resumes#job'
 
-
+  post '/converter', to: 'elasticbeanstalk#converter'
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
 
