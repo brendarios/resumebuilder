@@ -35,10 +35,6 @@ class ResumesController < ApplicationController
     end
 
 
-    def job
-      puts "hello world"
-    end
-    
     def contact_details
       # puts session[:resume_id]
     end

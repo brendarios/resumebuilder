@@ -53,8 +53,6 @@ Rails.application.routes.draw do
 
   get '/build-resume/build', to: 'resumes#build_resume'
 
-  post '/', to: 'resumes#build_resume'
-
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
