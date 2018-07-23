@@ -57,7 +57,6 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
-  post '/', to: 'resumes#job'
 
   post '/converter', to: 'elasticbeanstalk#converter'
   resources :sessions, only: [:create, :destroy]
