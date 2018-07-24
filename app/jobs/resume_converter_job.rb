@@ -1,4 +1,5 @@
 require 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 class ResumeConverterJob < ApplicationJob
 
   queue_as :my_first_queue
