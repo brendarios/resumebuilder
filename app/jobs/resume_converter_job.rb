@@ -8,7 +8,7 @@ class ResumeConverterJob < ApplicationJob
     resumes.each do |resume|
       puts "hello world"
 
-      pdf = WickedPdf.new.pdf_from_string('<h1>Hello There!</h1>')
+      pdf = WickedPdf.new.pdf_from_url('http://builderesume-env-1.pnfmvibna9.us-west-2.elasticbeanstalk.com/resumes/:id')
 
       save_path = '/tmp/file2.pdf'
       File.open(save_path, 'wb') do |file|
