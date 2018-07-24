@@ -10,6 +10,12 @@ class ResumeConverterJob < ApplicationJob
 
   def perform(*resumes)
 
+    Aws.config.update({
+       region: 'us-west-2',
+       credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY']),
+     })
+
+
     sender = 'newintechresumebuilder@gmail.com'
 
     # Replace recipient@example.com with a "To" address. If your account
@@ -89,4 +95,4 @@ class ResumeConverterJob < ApplicationJob
     end
 
   end
-end 
+end
