@@ -1,4 +1,4 @@
-
+require 'wicked_pdf'
 class ResumeConverterJob < ApplicationJob
 
   queue_as :my_first_queue
