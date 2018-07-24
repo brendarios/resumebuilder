@@ -15,6 +15,11 @@ class ResumeConverterJob < ApplicationJob
 
         file << pdf
       end
+      s3 = Aws::S3::Resource.new(region: 'us-west-2')
+      s3.bucket('resumesproject').object('pdf').upload_file(save_path)
+
+      # delete file from computer
+      File.delete(save_path)
 
 
     end
