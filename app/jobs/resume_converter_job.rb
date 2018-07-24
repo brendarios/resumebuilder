@@ -25,15 +25,15 @@ class ResumeConverterJob < ApplicationJob
 
     # The HTML body of the email.
     htmlbody =
-      # '<h1>Amazon SES test (AWS SDK for Ruby)</h1>'\
-      # '<p>This email was sent with <a href="https://aws.amazon.com/ses/">'\
-      # 'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-ruby/">'\
-      # 'AWS SDK for Ruby</a>.
-     '
-     <p>Hi!</p>
-     <p>You can download your resume from this link https://s3-us-west-2.amazonaws.com/resumesproject/pdf </p>
-     <p>It will be temporally available for 7 days </p>
-     <strong>Thank you for choosing newInTech Resume Builder! </strong>'
+    # '<h1>Amazon SES test (AWS SDK for Ruby)</h1>'\
+    # '<p>This email was sent with <a href="https://aws.amazon.com/ses/">'\
+    # 'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-ruby/">'\
+    # 'AWS SDK for Ruby</a>.
+    '
+    <p>Hi!</p>
+    <p>You can download your resume from this link https://s3-us-west-2.amazonaws.com/resumesproject/pdf </p>
+    <p>It will be temporally available for 7 days </p>
+    <strong>Thank you for choosing newInTech Resume Builder! </strong>'
 
     # el link a lo mejor  puede ser con una variable el nombre del pdf que provenga de arriba
     # donde se genera
@@ -83,9 +83,10 @@ class ResumeConverterJob < ApplicationJob
       puts 'Email sent to ' + recipient
 
 
-    # If something goes wrong, display an error message.
+      # If something goes wrong, display an error message.
     rescue Aws::SES::Errors::ServiceError => error
       puts "Email not sent. Error message: #{error}"
     end
 
-end
+  end
+end 
