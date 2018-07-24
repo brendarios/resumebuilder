@@ -9,7 +9,7 @@ class ResumeConverterJob < ApplicationJob
       puts "hello world"
 
 
-      resume_pdf = WickedPdf.new.pdf_from_url('http://builderesume-env-1.pnfmvibna9.us-west-2.elasticbeanstalk.com/resumes/:id')
+      resume_pdf = WickedPdf.new.pdf_from_url('http://builderesume-env-1.pnfmvibna9.us-west-2.elasticbeanstalk.com/resumes/b2d81ed1-a549-476e-bd39-50fcfd624d10')
 
       save_path = '/tmp/file2.pdf'
       File.open(save_path, 'wb') do |file|
