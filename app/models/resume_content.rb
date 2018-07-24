@@ -62,7 +62,6 @@ class ResumeContent
           "start_month_edu": @start_month_edu,
           "end_month_edu": @end_month_edu,
           "start_year_edu": @start_year_edu,
-          "end_month_edu": @end_month_edu,
           "end_year_edu": @end_year_edu
         },
         {
