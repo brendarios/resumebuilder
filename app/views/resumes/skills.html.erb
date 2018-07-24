@@ -57,6 +57,7 @@ window.onclick = function(event) {
   <div class="field">
     <%= form.label :languages %>
     <%= form.text_field 'languages', :value => (@resume.id ? @resume.resume_contents.languages : " ") %>
+
   </div>
 
   <div class="field">
@@ -73,12 +74,30 @@ window.onclick = function(event) {
     <%= form.label :operating_systems %>
     <%= form.text_field 'operating_systems', :value => (@resume.id ? @resume.resume_contents.operating_systems : " ") %>
   </div>
-</div>
-  <div class="actions-skills">
-    <%= form.submit %>
-  </div>
 
-  <% end %>
+  <!-- <div class="form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" value="">
+      Ruby
+    </label>
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" value="">
+      Javascript
+    </label>
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" value="">
+      Java
+    </label> -->
+  </div>
+</div>
+
+
+</div>
+<div class="actions-skills">
+  <%= form.submit %>
+</div>
+
+<% end %>
 
 
 <div class="buttons">

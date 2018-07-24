@@ -54,7 +54,7 @@ window.onclick = function(event) {
 
 
 
-<div class ="contact-details">
+<div class ="educations">
 
   <div>
     <div class="field">
@@ -193,15 +193,9 @@ window.onclick = function(event) {
       <%= form.text_field 'end_year_edu3', :value => (@resume.id ? @resume.resume_contents.educations[2]['end_year_edu3'] : " ") %>
     </div>
 
-
-
-  </div>
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-
+    <div class="actions-educations">
+      <%= form.submit %>
+    </div>
 
   <% end %>
 

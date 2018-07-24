@@ -38,7 +38,7 @@
 
 
             <h1 class="name"><%=@resume.resume_contents.first_name %> <%= @resume.resume_contents.last_name %>
-              <span>Interactive Designer</span></h1>
+              <span>Software Developer</span></h1>
             <ul>
               <li class="ad"><%= @resume.resume_contents.address %></li>
               <li class="mail"><%=@resume.resume_contents.email%></li>
@@ -47,7 +47,7 @@
               <li class="web"><%=@resume.resume_contents.portfolio_url%></li>
 							<%end%>
 							<% if !@resume.resume_contents.linkedin.empty? %>
-              <li class="web"><%=@resume.resume_contents.linkedin%></li>
+              <li class="ad"><%=@resume.resume_contents.linkedin%></li>
 							<%end%>
             </ul>
           </div>
@@ -59,85 +59,128 @@
         <!-- Begin 1st Row -->
         <div class="entry">
           <h2>SUMMARY</h2>
-          <p>Change agent, able to look at challenges from multiple aspects and beyond scope of responsibilities to transform multiple business lines</p>
+          <p>Chemical Engineering transitioning into Software Development. Change agent, able to look at challenges from multiple aspects and beyond scope of responsibilities to transform multiple business lines.
+					Leverage strong analytical skills, detailed-orientation, and problem-solving skills to evaluate operations and measure performance for implementing strategic
+					solutions that generate revenue and save costs.</p>
         </div>
         <!-- End 1st Row -->
         <!-- Begin 2nd Row -->
+
+				<div class="entry">
+          <h2>TECHNICAL SKILLS</h2>
+          <div class="content">
+
+						<h3>Languages</h3>
+            <ul class="skills">
+              <li>HTML/CSS</li>
+              <li>JavaScript</li>
+              <li>Ruby</li>
+
+            </ul>
+
+
+          </div>
+          <div class="content">
+						<h3>Frameworks & Libraries</h3>
+						<ul class="skills">
+							<li>Ruby on Rails</li>
+							<li>React</li>
+							<li>JQuery</li>
+
+						</ul>
+
+          </div>
+					<div class="content">
+						<h3>Databases</h3>
+						<ul class="skills">
+							<li>Postgresl</li>
+							<li>DynamoDB</li>
+
+						</ul>
+
+					</div>
+
+					<div class="content">
+						<h3>Others</h3>
+						<ul class="skills">
+							<li>Amazon SQS</li>
+							<li>Amazon S3</li>
+							<li>Amazon SES	</li>
+
+						</ul>
+
+					</div>
+
+
+					<div class="entry">
+	          <h2>EXPERIENCE</h2>
+						<div class="content">
+	            <h3>Jun 2011 - May 2015</h3>
+	            <p>Product Management <br />
+	              <em>Metalsa</em></p>
+	            <ul class="info">
+	              <li>Managed the team responsible of the accounts of Volkswagen, Toyota, and Ford in South America; through product changes,
+									quotations, prototypes, and open issues throughout product life cycle, supporting commercial and procurement groups with
+									costing, risk analysis, supplier identification, engineering specifications, and quality assurance. </li>
+	              <li>Pellentesque at lectus in libero dapibus cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.</li>
+	            </ul>
+	          </div>
+	          <!-- <div class="content">
+	            <h3>Jun 2007 - May 2009</h3>
+	            <p>Junior Web Designer <br />
+	              <em>Bachelor of Science in Graphic Design</em></p>
+	            <ul class="info">
+	              <li>Sed fermentum sollicitudin interdum. Etiam imperdiet sapien in dolor rhoncus a semper tortor posuere. </li>
+	              <li>Pellentesque at lectus in libero dapibus cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.</li>
+	            </ul>
+	          </div> -->
+	        </div>
+
         <div class="entry">
           <h2>EDUCATION</h2>
-          <div class="content">
-						<h3><%=@resume.resume_contents.start_month_edu%> <%=@resume.resume_contents.start_year_edu%>-<h3><%=@resume.resume_contents.end_month_edu%> <%=@resume.resume_contents.end_year_edu%>
-            <p><%=@resume.resume_contents.educations[0]['school']%><br />
-
-              <em><%=@resume.resume_contents.degree_major%></em></p>
+					<div class="content">
+            <h3>Feb 2018 - Present</h3>
+            <p>Ada Developers Academy, Seattle, WA <br />
+              <em>Software Developer</em></p>
           </div>
-          <!-- <div class="content">
-            <h3>Sep 2001 - Jun 2005</h3>
-            <p>University of Art &amp; Design, New York <br />
-              <em>Bachelor of Science in Graphic Design</em></p>
-          </div> -->
+						<div class="content">
+							<h3>Jul 2007 - Dec 2007</h3>
+							<p>University of Sydney, Sydney, Aus <br />
+								<em>Exchange Program</em></p>
+						</div>
+
+          <div class="content">
+            <h3>Aug 2004 - Dec 2008</h3>
+            <p>Tec of Monterrey, Monterrey, Mex <br />
+              <em>Bachelor of Chemical Engineering</em></p>
+          </div>
         </div>
         <!-- End 2nd Row -->
         <!-- Begin 3rd Row -->
-        <div class="entry">
-          <h2>EXPERIENCE</h2>
-          <div class="content">
-            <h3>May 2009 - Feb 2010</h3>
-						<h3><%=@resume.resume_contents.start_month_exp%> <%=@resume.resume_contents.start_year_exp%>-<h3><%=@resume.resume_contents.end_month_exp%> <%=@resume.resume_contents.end_year_exp%>
-            <p><%=@resume.resume_contents.company%><br />
-              <em><%=@resume.resume_contents.position%></em></p>
-            <ul class="info">
-              <li><%=@resume.resume_contents.company%></li>
-              <li>Pellentesque at lectus in <a href="#">libero dapibus</a> cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.</li>
-            </ul>
-          </div>
-          <div class="content">
-            <h3>Jun 2007 - May 2009</h3>
-            <p>Junior Web Designer <br />
-              <em>Bachelor of Science in Graphic Design</em></p>
-            <ul class="info">
-              <li>Sed fermentum sollicitudin interdum. Etiam imperdiet sapien in dolor rhoncus a semper tortor posuere. </li>
-              <li>Pellentesque at lectus in libero dapibus cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.</li>
-            </ul>
-          </div>
-        </div>
+
         <!-- End 3rd Row -->
         <!-- Begin 4th Row -->
-        <div class="entry">
-          <h2>SKILLS</h2>
-          <div class="content">
-            <h3>Software Knowledge</h3>
-            <ul class="skills">
-              <li>Photoshop</li>
-              <li>Illustrator</li>
-              <li>InDesign</li>
-              <li>Flash</li>
-              <li>Fireworks</li>
-              <li>Dreamweaver</li>
-              <li>After Effects</li>
-              <li>Cinema 4D</li>
-              <li>Maya</li>
-            </ul>
-          </div>
-          <div class="content">
-            <h3>Languages</h3>
-            <ul class="skills">
-              <li>CSS/XHTML</li>
-              <li>PHP</li>
-              <li>JavaScript</li>
-              <li>Ruby on Rails</li>
-              <li>ActionScript</li>
-              <li>C++</li>
-            </ul>
-          </div>
 
-					<div class="entry">
+
+					<!-- <div class="entry">
 						<% if !@resume.resume_contents.hobbies.empty? %>
 	          <h2>HOBBIES</h2>
 						<ul class="skills">
               <li><%=@resume.resume_contents.hobbies%></li>
             </ul>
 						<%end%>>
+	        </div> -->
+
+					<div class="entry">
+
+	          <h2>OTHERS</h2>
+						<ul class="skills">
+              <li>Portfolio URL: www.brendarios.com</li>
+            </ul>
+						<ul class="skills">
+              <li>Github: www.brendarios.com</li>
+            </ul>
+
 	        </div>
         </div>
         <!-- End 4th Row -->

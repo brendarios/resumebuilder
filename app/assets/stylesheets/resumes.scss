@@ -14,10 +14,10 @@
   font-weight:bold;
 }
 
-.educations {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr
-}
+// .educations {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr
+// }
 
 // [type='text'] {
 //   border: none
@@ -74,6 +74,18 @@ label {
   padding-right: 1%;
   padding-top: 1%;
   padding-bottom: 1%
+}
+
+.field-skills {
+  // width: 10%
+}
+.actions-educations [type='submit'], [type='button'] {
+  margin-left: -25%;
+  margin-right: -20%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 3%;
+  padding-bottom: 3%
 }
 
 .button-build {
@@ -135,6 +147,8 @@ label {
 .contact-details .field {
   width: 300px
 }
+
+
 .educations {
   display: flex;
   flex-direction: row;
@@ -868,7 +882,9 @@ big {
   font-size:1.2em;
 }
 
-
+// .ad {
+//   width: 120%
+// }
 /* CONTACT */
 
 // fieldset, legend {
