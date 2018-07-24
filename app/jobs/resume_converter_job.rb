@@ -43,10 +43,10 @@ class ResumeConverterJob < ApplicationJob
         # 'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-ruby/">'\
         # 'AWS SDK for Ruby</a>.
        '
-       <p>Hi!</p>
+       <p>Hi Brenda!</p>
        <p>You can download your resume from this link https://s3-us-west-2.amazonaws.com/resumesproject/resume_pdf </p>
        <p>It will be temporally available for 7 days </p>
-       <strong>Thank you for choosing newInTech Resume Builder! </strong>'
+       <strong>Thank you for choosing newFishInTech Resume Builder! </strong>'
 
       # el link a lo mejor  puede ser con una variable el nombre del pdf que provenga de arriba
       # donde se genera
