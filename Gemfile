@@ -30,9 +30,6 @@ gem 'aws-sdk'
 
 gem 'wkhtmltopdf-binary'
 
-
-gem 'wkhtmltopdf-binary-edge'
-
 gem 'foundation-rails'
 
 gem "omniauth-google-oauth2", "~> 0.2.1"
