@@ -73,7 +73,6 @@ class ResumeContent
           "start_month_edu2": @start_month_edu2,
           "end_month_edu2": @end_month_edu2,
           "start_year_edu2": @start_year_edu2,
-          "end_month_edu2": @end_month_edu2,
           "end_year_edu2": @end_year_edu2
         },
         {
@@ -84,7 +83,6 @@ class ResumeContent
           "start_month_edu3": @start_month_edu3,
           "end_month_edu3": @end_month_edu3,
           "start_year_edu3": @start_year_edu3,
-          "end_month_edu3": @end_month_edu3,
           "end_year_edu3": @end_year_edu3
         }
 
@@ -104,7 +102,6 @@ class ResumeContent
           "start_month_exp2": @start_month_exp2,
           "end_month_exp2": @end_month_exp2,
           "start_year_exp2": @start_year_exp2,
-          "end_month_exp2": @end_month_exp2,
           "end_year_exp2": @end_year_exp2
         },
         {
@@ -115,7 +112,6 @@ class ResumeContent
           "start_month_exp3": @start_month_exp3,
           "end_month_exp3": @end_month_exp3,
           "start_year_exp3": @start_year_exp3,
-          "end_month_exp3": @end_month_exp3,
           "end_year_exp3": @end_year_exp3
         }
       ],
