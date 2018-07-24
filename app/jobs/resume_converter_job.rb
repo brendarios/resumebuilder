@@ -1,5 +1,5 @@
 require 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+
 class ResumeConverterJob < ApplicationJob
 
   queue_as :my_first_queue
@@ -15,6 +15,11 @@ class ResumeConverterJob < ApplicationJob
       #
       #   file << pdf
       # end
+
+      Aws.config.update({
+          region: 'us-west-2',
+          credentials: Aws::Credentials.new('AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY'),
+        })
       # SES sending email!
       sender = 'newintechresumebuilder@gmail.com'
 
