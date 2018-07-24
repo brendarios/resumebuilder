@@ -77,22 +77,24 @@ window.onclick = function(event) {
       <%= form.text_field 'school_location', :value => (@resume.id ? @resume.resume_contents.educations[0]['school_location'] : " ") %>
     </div>
 
-    <div>
-      <select name="Month">
-        <option value="January">January</option>
-        <option value="February">February</option>
-        <option value="March">March</option>
-        <option value="April">April</option>
-        <option value="May">May</option>
-        <option value="June">June</option>
-        <option value="July">July</option>
-        <option value="August">August</option>
-        <option value="September">September</option>
-        <option value="October">October</option>
-        <option value="November">November</option>
-        <option value="December">December</option>
+    <div class="field">
+      <%= form.label :start_month_edu %>
+      <%= form.text_field 'start_month_edu', :value => (@resume.id ? @resume.resume_contents.educations[0]['start_month_edu'] : " ") %>
+    </div>
 
-      </select>
+    <div class="field">
+      <%= form.label :end_month_edu %>
+      <%= form.text_field 'end_month_edu', :value => (@resume.id ? @resume.resume_contents.educations[0]['end_month_edu'] : " ") %>
+    </div>
+
+    <div class="field">
+      <%= form.label :start_year_edu %>
+      <%= form.text_field 'start_year_edu', :value => (@resume.id ? @resume.resume_contents.educations[0]['start_year_edu'] : " ") %>
+    </div>
+
+    <div class="field">
+      <%= form.label :end_year_edu %>
+      <%= form.text_field 'end_year_edu', :value => (@resume.id ? @resume.resume_contents.educations[0]['end_year_edu'] : " ") %>
     </div>
 
   </div>
@@ -119,7 +121,36 @@ window.onclick = function(event) {
       <%= form.label :school_location2 %>
       <%= form.text_field 'school_location2', :value => (@resume.id ? @resume.resume_contents.educations[1]['school_location2'] : " ")%>
     </div>
+
+
+    <div class="field">
+      <%= form.label :start_month_edu2 %>
+      <%= form.text_field 'start_month_edu2', :value => (@resume.id ? @resume.resume_contents.educations[1]['start_month_edu2'] : " ") %>
+    </div>
+
+    <div class="field">
+      <%= form.label :end_month_edu2 %>
+      <%= form.text_field 'end_month_edu2', :value => (@resume.id ? @resume.resume_contents.educations[1]['end_month_edu2'] : " ") %>
+    </div>
+
+    <div class="field">
+      <%= form.label :start_year_edu2 %>
+      <%= form.text_field 'start_year_edu2', :value => (@resume.id ? @resume.resume_contents.educations[1]['start_year_edu2'] : " ") %>
+    </div>
+
+    <div class="field">
+      <%= form.label :end_year_edu2 %>
+      <%= form.text_field 'end_year_edu2', :value => (@resume.id ? @resume.resume_contents.educations[1]['end_year_edu2'] : " ") %>
+    </div>
+
+
+
+
   </div>
+
+
+
+
   <% @education3_data = (@resume.id ? @resume.resume_contents.educations[2]['school3'] : nil) %>
   <div id="education_form3" style="display: <%= @education3_data.nil? ? 'none' : true %>">
     <div class="field">
@@ -142,6 +173,28 @@ window.onclick = function(event) {
       <%= form.text_field 'school_location3', :value => (@resume.id ? @resume.resume_contents.educations[2]['school_location3'] : " ") %>
     </div>
 
+    <div class="field">
+      <%= form.label :start_month_edu3 %>
+      <%= form.text_field 'start_month_edu3', :value => (@resume.id ? @resume.resume_contents.educations[2]['start_month_edu3'] : " ") %>
+    </div>
+
+    <div class="field">
+      <%= form.label :end_month_edu3 %>
+      <%= form.text_field 'end_month_edu3', :value => (@resume.id ? @resume.resume_contents.educations[2]['end_month_edu3'] : " ") %>
+    </div>
+
+    <div class="field">
+      <%= form.label :start_year_edu3 %>
+      <%= form.text_field 'start_year_edu3', :value => (@resume.id ? @resume.resume_contents.educations[2]['start_year_edu3'] : " ") %>
+    </div>
+
+    <div class="field">
+      <%= form.label :end_year_edu3 %>
+      <%= form.text_field 'end_year_edu3', :value => (@resume.id ? @resume.resume_contents.educations[2]['end_year_edu3'] : " ") %>
+    </div>
+
+
+
   </div>
 
 
@@ -152,37 +205,42 @@ window.onclick = function(event) {
 
   <% end %>
 
-  <div class ="button-area">
-    <!-- <%= button_to 'Add another education', build_resume_education_path, :class => "button", :method => "post" %> -->
-    <button id="add_education" class ="button" type="button" name="button" onclick="show_education_form();">Add another education</button>
-    <div>
-
-      <div class ="button-area">
-        <%= button_to 'Back', build_resume_summary_path, :class => "button", :method => "get" %>
-        <div>
-
-          <div class ="button-area">
-            <%= button_to 'Next: Experience',build_resume_experience_path, :class => "button", :method => "get" %>
-            <div>
+</div>
 
 <script>
-  var form2 = false;
-  var form3 = false;
-  if ($('#education_form2').css('display') != 'none') {
-    form2 = true
+var form2 = false;
+var form3 = false;
+if ($('#education_form2').css('display') != 'none') {
+  form2 = true
+}
+if ($('#education_form3').css('display') != 'none') {
+  form3 = true
+}
+function show_education_form() {
+  if (!form2) {
+    $('#education_form2').show();
+    form2 = true;
   }
-  if ($('#education_form3').css('display') != 'none') {
-    form3 = true
+  else if (form2 && !form3) {
+    $('#education_form3').show();
+    form3 = true;
+    $('#add_education').prop('disabled', true); 
   }
-  function show_education_form() {
-    if (!form2) {
-      $('#education_form2').show();
-      form2 = true;
-    }
-    else if (form2 && !form3) {
-      $('#education_form3').show();
-      form3 = true;
-      $('#add_education').prop('disabled', true); 
-    }
-  }
+}
 </script>
+
+<div class ="buttons">
+  <!-- <%= button_to 'Add another education', build_resume_education_path, :class => "button", :method => "post" %> -->
+  <div>
+    <button id="add_education" class ="button" type="button" name="button" onclick="show_education_form();">Add another education</button>
+  </div>
+
+  <div>
+    <%= button_to 'Back', build_resume_summary_path, :class => "button", :method => "get" %>
+  </div>
+
+  <div>
+    <%= button_to 'Next: Experience',build_resume_experience_path, :class => "button", :method => "get" %>
+  </div>
+
+</div>
