@@ -59,22 +59,21 @@
         <!-- Begin 1st Row -->
         <div class="entry">
           <h2>SUMMARY</h2>
-          <p>Chemical Engineering transitioning into Software Development. Change agent, able to look at challenges from multiple aspects and beyond scope of responsibilities to transform multiple business lines.
-					Leverage strong analytical skills, detailed-orientation, and problem-solving skills to evaluate operations and measure performance for implementing strategic
-					solutions that generate revenue and save costs.</p>
+          <p><%=@resume.resume_contents.summary%></p>
         </div>
         <!-- End 1st Row -->
         <!-- Begin 2nd Row -->
 
 				<div class="entry">
-          <h2>TECHNICAL SKILLS</h2>
+          <h2>SKILLS</h2>
           <div class="content">
 
 						<h3>Languages</h3>
             <ul class="skills">
-              <li>HTML/CSS</li>
-              <li>JavaScript</li>
-              <li>Ruby</li>
+							<li><%=@resume.resume_contents.languages%></li>
+              <!-- <li>HTML/CSS</li>
+              <li>JavaScript</li> -->
+
 
             </ul>
 
@@ -83,9 +82,9 @@
           <div class="content">
 						<h3>Frameworks & Libraries</h3>
 						<ul class="skills">
-							<li>Ruby on Rails</li>
-							<li>React</li>
-							<li>JQuery</li>
+							<li><%=@resume.resume_contents.frameworks%></li>
+							<!-- <li>React</li>
+							<li>JQuery</li> -->
 
 						</ul>
 
@@ -93,19 +92,22 @@
 					<div class="content">
 						<h3>Databases</h3>
 						<ul class="skills">
-							<li>Postgresl</li>
-							<li>DynamoDB</li>
+							<li><%=@resume.resume_contents.databases%></li>
+							<!-- <li>MySQL</li>
+							<li>NoSQL</li> -->
 
 						</ul>
 
 					</div>
 
 					<div class="content">
-						<h3>Others</h3>
+						<h3>Cloud Tools</h3>
 						<ul class="skills">
-							<li>Amazon SQS</li>
+							<li><%=@resume.resume_contents.operating_systems%></li>
+							<!-- <li>Amazon SQS </li>
 							<li>Amazon S3</li>
 							<li>Amazon SES	</li>
+							<li>Elastic Beanstalk</li> -->
 
 						</ul>
 
@@ -122,7 +124,6 @@
 	              <li>Managed the team responsible of the accounts of Volkswagen, Toyota, and Ford in South America; through product changes,
 									quotations, prototypes, and open issues throughout product life cycle, supporting commercial and procurement groups with
 									costing, risk analysis, supplier identification, engineering specifications, and quality assurance. </li>
-	              <li>Pellentesque at lectus in libero dapibus cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.</li>
 	            </ul>
 	          </div>
 	          <!-- <div class="content">
@@ -178,7 +179,7 @@
               <li>Portfolio URL: www.brendarios.com</li>
             </ul>
 						<ul class="skills">
-              <li>Github: www.brendarios.com</li>
+              <li>Github: <%=@resume.resume_contents.github%></li>
             </ul>
 
 	        </div>

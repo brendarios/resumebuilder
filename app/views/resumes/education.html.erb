@@ -97,6 +97,7 @@ window.onclick = function(event) {
       <%= form.text_field 'end_year_edu', :value => (@resume.id ? @resume.resume_contents.educations[0]['end_year_edu'] : " ") %>
     </div>
 
+
   </div>
 
   <% @education2_data = (@resume.id ? @resume.resume_contents.educations[1]['school2'] : nil) %>
@@ -193,13 +194,15 @@ window.onclick = function(event) {
       <%= form.text_field 'end_year_edu3', :value => (@resume.id ? @resume.resume_contents.educations[2]['end_year_edu3'] : " ") %>
     </div>
 
-    <div class="actions-educations">
-      <%= form.submit %>
-    </div>
-
-  <% end %>
+    
 
 </div>
+
+<div class="actions-educations">
+  <%= form.submit %>
+</div>
+
+<% end %>
 
 <script>
 var form2 = false;

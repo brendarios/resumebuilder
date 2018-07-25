@@ -73,6 +73,7 @@ window.onclick = function(event) {
   <div class="field">
     <%= form.label :operating_systems %>
     <%= form.text_field 'operating_systems', :value => (@resume.id ? @resume.resume_contents.operating_systems : " ") %>
+
   </div>
 
   <!-- <div class="form-check">

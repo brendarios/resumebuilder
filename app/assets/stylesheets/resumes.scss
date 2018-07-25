@@ -185,7 +185,11 @@ label {
 
 
 .button-area {
-  float: none
+  float: none;
+}
+
+.button-area a {
+  color: red
 }
 .paragraph {
   margin-top: 1%;
@@ -610,7 +614,7 @@ ul.skills li {
   margin:0;
   padding:0;
   float:left;
-  width:156px;
+  width:500px;
   background-image:url(../images/bullet.gif);
   background-repeat: no-repeat;
   padding-left:10px;
@@ -666,7 +670,7 @@ img.portrait {
 /* SELF INFORMATION */
 /* ----------------------------------------- */
 .entry-top {
-  margin-left: 20%
+  margin-left: 35%
 }
 .self {
   width:250px;
@@ -1060,7 +1064,8 @@ label.error {
 }
 
 .tips-summary.questions {
-  font-style: italic
+  font-style: italic;
+  color: #0066cc
 }
 
 .tips p {
