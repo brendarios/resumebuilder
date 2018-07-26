@@ -72,7 +72,7 @@ window.onclick = function(event) {
 
   <div class="field">
     <%= form.label :cloud_tools %>
-    <%= form.text_field 'cloud_tools', :value => (@resume.id ? @resume.resume_contents.operating_systems : " ") %>
+    <%= form.text_field 'cloud_tools', :value => (@resume.id ? @resume.resume_contents.cloud_tools : " ") %>
 
   </div>
 
