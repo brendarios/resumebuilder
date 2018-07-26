@@ -39,10 +39,10 @@
 
             <h1 class="name"><%=@resume.resume_contents.first_name %> <%= @resume.resume_contents.last_name %>
               <span>Software Developer</span></h1>
-            <ul>
+            <ul class="datos">
               <li class="ad"><%= @resume.resume_contents.address %></li>
+							<li class="tel"><%=@resume.resume_contents.phone%></li>
               <li class="mail"><%=@resume.resume_contents.email%></li>
-              <li class="tel"><%=@resume.resume_contents.phone%></li>
 							<% if !@resume.resume_contents.portfolio_url.empty? %>
               <li class="web"><%=@resume.resume_contents.portfolio_url%></li>
 							<%end%>
@@ -176,10 +176,10 @@
 
 	          <h2>OTHERS</h2>
 						<ul class="skills">
-              <li>Portfolio URL: www.brendarios.com</li>
+              <li><strong>Portfolio URL:</strong> www.brendarios.com</li>
             </ul>
 						<ul class="skills">
-              <li>Github: <%=@resume.resume_contents.github%></li>
+              <li><strong>Github:</strong><%=@resume.resume_contents.github%></li>
             </ul>
 
 	        </div>

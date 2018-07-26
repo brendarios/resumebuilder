@@ -422,6 +422,7 @@ a:hover {
   padding-top:55px;
   clear: both;
   margin-left:4px;
+  font-size: 15px
 }
 
 h1  {
@@ -479,7 +480,7 @@ h3 {
   float:left;
   padding:0;
   clear:both;
-  font-size: 13px;
+  font-size: 16px;
   color:#7b90b5;
 }
 
@@ -517,7 +518,7 @@ em {
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
   color:#777777;
-  font-size:12px;
+  font-size:15px;
   display: block;
   padding-top:3px;
 }
@@ -637,6 +638,16 @@ ul.works li {
   float:left;
 }
 
+.datos {
+  font-size: 15px;
+  width: 280px;
+  margin-left: -15%
+}
+
+.suummary-statement {
+  font-size: 30px;
+  color: red
+}
 ul.works li img {
   padding:4px;
   background-color:#fff;
@@ -670,7 +681,7 @@ img.portrait {
 /* SELF INFORMATION */
 /* ----------------------------------------- */
 .entry-top {
-  margin-left: 32%
+  margin-left: 40%
 }
 .self {
   width:250px;

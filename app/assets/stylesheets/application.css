@@ -22,21 +22,22 @@ body {
   background-color: white;
 }
 
-
-
-
-
 .login {
   align-content:flex-end;
   align-self:flex-end;
   padding-right: 5%;
   padding-top:2%;
-  margin-left: 80%;
+  margin-left: 75%;
   background-color: white;
 
 }
 
 .login a {
   color: #0066cc;
-  font-size: 15pt;
+  font-size: 12pt;
+}
+
+.login a:hover {
+  color: #f2f2f2;
+  font-size: 12pt;
 }
